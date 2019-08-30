@@ -16,10 +16,11 @@ Please see [developers.yoti.com](https://developers.yoti.com/yoti-doc-scan/yoti-
 ## Installation
 
 ### Carthage
-Make sure you are running the latest version of [Carthage](https://github.com/carthage/carthage) by running:
+Make sure you are running the latest version of [Carthage](https://github.com/carthage/carthage) and [Git LFS](https://git-lfs.github.com) by running:
 ```bash
 brew update
 brew upgrade carthage
+brew upgrade git-lfs
 ```
 
 Create a [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) in the same directory where your `.xcodeproj` or `.xcworkspace` is and add the following line to it:
@@ -42,13 +43,13 @@ On your application targets' `Build Phases` tab:
 /usr/local/bin/carthage copy-frameworks
 ```
 
-- Add the paths to the frameworks you want to use under `Input Files`, for example:
+- Add the paths to the frameworks you want to use under `Input Files`:
 ```bash
 $(SRCROOT)/Carthage/Build/iOS/YotiDocScan.framework
 $(SRCROOT)/Carthage/Build/iOS/ScanDocument.framework
 ```
 
-- Then add the paths to the copied frameworks under `Output Files`, for example:
+- Then add the paths to the copied frameworks under `Output Files`:
 ```bash
 $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/YotiDocScan.framework
 $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ScanDocument.framework
@@ -57,6 +58,9 @@ $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ScanDocument.framework
 ### Add Libraries and Resources
 Add the following libraries at `Build Phases` → `Link Binary With Libraries`
 - `Microblink.framework`
+- `AVFoundation.framework`
+- `AudioToolbox.framework`
+- `CoreMedia.framework`
 - `libc++.tbd`
 - `libiconv.tbd`
 - `libz.tbd`
@@ -64,9 +68,46 @@ Add the following libraries at `Build Phases` → `Link Binary With Libraries`
 And the following resources at `Build Phases` → `Copy Bundle Resources`
 - `Microblink.bundle`
 
-Additionally, you should use [Git LFS](https://git-lfs.github.com) to track the `Microblink.bundle`, for example:
+In addition, you should use [Git LFS](https://git-lfs.github.com) to track the `Microblink.bundle`:
 ```bash
 git lfs track "<path>/Microblink.bundle/**"
+```
+
+### Configuration
+Add a `Strip Unused Architectures` script
+
+On your application targets' `Build Phases` tab:
+- Click `+` icon and choose `New Run Script Phase`.
+- Create a script with a shell of your choice (e.g. `/bin/sh`).
+- Add the following to the script area below the shell:
+```bash
+APP_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"
+
+# This script loops through the frameworks embedded in the application and
+# removes unused architectures.
+find "$APP_PATH" -name '*.framework' -type d | while read -r FRAMEWORK
+do
+FRAMEWORK_EXECUTABLE_NAME=$(defaults read "$FRAMEWORK/Info.plist" CFBundleExecutable)
+FRAMEWORK_EXECUTABLE_PATH="$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME"
+echo "Executable is $FRAMEWORK_EXECUTABLE_PATH"
+
+EXTRACTED_ARCHS=()
+
+for ARCH in $ARCHS
+do
+echo "Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME"
+lipo -extract "$ARCH" "$FRAMEWORK_EXECUTABLE_PATH" -o "$FRAMEWORK_EXECUTABLE_PATH-$ARCH"
+EXTRACTED_ARCHS+=("$FRAMEWORK_EXECUTABLE_PATH-$ARCH")
+done
+
+echo "Merging extracted architectures: ${ARCHS}"
+lipo -o "$FRAMEWORK_EXECUTABLE_PATH-merged" -create "${EXTRACTED_ARCHS[@]}"
+rm "${EXTRACTED_ARCHS[@]}"
+
+echo "Replacing original executable with thinned version"
+rm "$FRAMEWORK_EXECUTABLE_PATH"
+mv "$FRAMEWORK_EXECUTABLE_PATH-merged" "$FRAMEWORK_EXECUTABLE_PATH"
+done
 ```
 
 ## Integration
