@@ -1,0 +1,386 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		203BDA91221B1F8100026323 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 203BDA90221B1F8100026323 /* ViewController.swift */; };
+		20B0D1572224161200AB6BB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B0D1592224161200AB6BB8 /* Main.storyboard */; };
+		20B0D15A2224161800AB6BB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20B0D15C2224161800AB6BB8 /* LaunchScreen.storyboard */; };
+		20F8697522205F000010D734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F8697422205F000010D734 /* AppDelegate.swift */; };
+		5F54433223184B1700D81A1B /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F80BB74222EE1940054E619 /* libiconv.tbd */; };
+		5F80BB73222EE18B0054E619 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F80BB72222EE18A0054E619 /* libz.tbd */; };
+		5F80BB77222EE19D0054E619 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F80BB76222EE19D0054E619 /* libc++.tbd */; };
+		5F80BB97222EECD60054E619 /* Microblink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F80BB96222EECD60054E619 /* Microblink.bundle */; };
+		5F95E268221B1334007B6035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F95E267221B1334007B6035 /* Assets.xcassets */; };
+		5FE77A6923192C7C00F265B4 /* Microblink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE77A6823192C7C00F265B4 /* Microblink.framework */; };
+		5FE77A6A23192C7C00F265B4 /* Microblink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE77A6823192C7C00F265B4 /* Microblink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		5FE77A1E2319144000F265B4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5FE77A6A23192C7C00F265B4 /* Microblink.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		203BDA90221B1F8100026323 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20B0D1582224161200AB6BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		20B0D15B2224161800AB6BB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		20F8697422205F000010D734 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5F80BB72222EE18A0054E619 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		5F80BB74222EE1940054E619 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
+		5F80BB76222EE19D0054E619 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		5F80BB7B222EE3C70054E619 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		5F80BB7D222EE3D30054E619 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		5F80BB7F222EE3DB0054E619 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		5F80BB96222EECD60054E619 /* Microblink.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Microblink.bundle; sourceTree = "<group>"; };
+		5F95E25D221B1333007B6035 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F95E267221B1334007B6035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5F95E26C221B1334007B6035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FE77A6823192C7C00F265B4 /* Microblink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Microblink.framework; path = "Carthage/Checkouts/blinkid-ios/Microblink.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5F95E25A221B1333007B6035 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5F54433223184B1700D81A1B /* libiconv.tbd in Frameworks */,
+				5F80BB73222EE18B0054E619 /* libz.tbd in Frameworks */,
+				5FE77A6923192C7C00F265B4 /* Microblink.framework in Frameworks */,
+				5F80BB77222EE19D0054E619 /* libc++.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		203BDA8D221B1DB800026323 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				20B0D1592224161200AB6BB8 /* Main.storyboard */,
+				20B0D15C2224161800AB6BB8 /* LaunchScreen.storyboard */,
+				5F95E26C221B1334007B6035 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		203BDA8E221B1DCC00026323 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5F80BB96222EECD60054E619 /* Microblink.bundle */,
+				5F95E267221B1334007B6035 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		5F80BB62222EDA460054E619 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5FE77A6823192C7C00F265B4 /* Microblink.framework */,
+				5F80BB7F222EE3DB0054E619 /* AVFoundation.framework */,
+				5F80BB7D222EE3D30054E619 /* CoreMedia.framework */,
+				5F80BB7B222EE3C70054E619 /* AudioToolbox.framework */,
+				5F80BB76222EE19D0054E619 /* libc++.tbd */,
+				5F80BB74222EE1940054E619 /* libiconv.tbd */,
+				5F80BB72222EE18A0054E619 /* libz.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F95E254221B1333007B6035 = {
+			isa = PBXGroup;
+			children = (
+				5F95E25F221B1333007B6035 /* Sample */,
+				5F80BB62222EDA460054E619 /* Frameworks */,
+				5F95E25E221B1333007B6035 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5F95E25E221B1333007B6035 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5F95E25D221B1333007B6035 /* Sample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5F95E25F221B1333007B6035 /* Sample */ = {
+			isa = PBXGroup;
+			children = (
+				20F8697422205F000010D734 /* AppDelegate.swift */,
+				203BDA90221B1F8100026323 /* ViewController.swift */,
+				203BDA8D221B1DB800026323 /* SupportingFiles */,
+				203BDA8E221B1DCC00026323 /* Resources */,
+			);
+			path = Sample;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5F95E25C221B1333007B6035 /* Sample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5F95E285221B1334007B6035 /* Build configuration list for PBXNativeTarget "Sample" */;
+			buildPhases = (
+				5F95E259221B1333007B6035 /* Sources */,
+				5F95E25B221B1333007B6035 /* Resources */,
+				5F95E25A221B1333007B6035 /* Frameworks */,
+				5FE77A1E2319144000F265B4 /* Embed Frameworks */,
+				5FFBB8012317DF3F0055D814 /* Carthage Copy Bitcode Files */,
+				5F3F365323197E9C0061FFCC /* Strip Unused Architectures */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Sample;
+			productName = Sample;
+			productReference = 5F95E25D221B1333007B6035 /* Sample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5F95E255221B1333007B6035 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Yoti Ltd";
+				TargetAttributes = {
+					5F95E25C221B1333007B6035 = {
+						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
+					};
+				};
+			};
+			buildConfigurationList = 5F95E258221B1333007B6035 /* Build configuration list for PBXProject "Sample" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5F95E254221B1333007B6035;
+			productRefGroup = 5F95E25E221B1333007B6035 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5F95E25C221B1333007B6035 /* Sample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5F95E25B221B1333007B6035 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20B0D1572224161200AB6BB8 /* Main.storyboard in Resources */,
+				5F95E268221B1334007B6035 /* Assets.xcassets in Resources */,
+				20B0D15A2224161800AB6BB8 /* LaunchScreen.storyboard in Resources */,
+				5F80BB97222EECD60054E619 /* Microblink.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5F3F365323197E9C0061FFCC /* Strip Unused Architectures */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Strip Unused Architectures";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APP_PATH=\"${TARGET_BUILD_DIR}/${WRAPPER_NAME}\"\n\n# This script loops through the frameworks embedded in the application and\n# removes unused architectures.\nfind \"$APP_PATH\" -name '*.framework' -type d | while read -r FRAMEWORK\ndo\nFRAMEWORK_EXECUTABLE_NAME=$(defaults read \"$FRAMEWORK/Info.plist\" CFBundleExecutable)\nFRAMEWORK_EXECUTABLE_PATH=\"$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME\"\necho \"Executable is $FRAMEWORK_EXECUTABLE_PATH\"\n\nEXTRACTED_ARCHS=()\n\nfor ARCH in $ARCHS\ndo\necho \"Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME\"\nlipo -extract \"$ARCH\" \"$FRAMEWORK_EXECUTABLE_PATH\" -o \"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\"\nEXTRACTED_ARCHS+=(\"$FRAMEWORK_EXECUTABLE_PATH-$ARCH\")\ndone\n\necho \"Merging extracted architectures: ${ARCHS}\"\nlipo -o \"$FRAMEWORK_EXECUTABLE_PATH-merged\" -create \"${EXTRACTED_ARCHS[@]}\"\nrm \"${EXTRACTED_ARCHS[@]}\"\n\necho \"Replacing original executable with thinned version\"\nrm \"$FRAMEWORK_EXECUTABLE_PATH\"\nmv \"$FRAMEWORK_EXECUTABLE_PATH-merged\" \"$FRAMEWORK_EXECUTABLE_PATH\"\n\ndone\n";
+		};
+		5FFBB8012317DF3F0055D814 /* Carthage Copy Bitcode Files */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/YotiDocScan.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ScanDocument.framework",
+			);
+			name = "Carthage Copy Bitcode Files";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/YotiDocScan.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ScanDocument.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5F95E259221B1333007B6035 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				20F8697522205F000010D734 /* AppDelegate.swift in Sources */,
+				203BDA91221B1F8100026323 /* ViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		20B0D1592224161200AB6BB8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20B0D1582224161200AB6BB8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		20B0D15C2224161800AB6BB8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				20B0D15B2224161800AB6BB8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5F410CDF221B29A300979E20 /* Prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = "";
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				OTHER_SWIFT_FLAGS = "-DPROD";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.yoti.mobile.ios.sdk.yoti-docs.sample";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Prod;
+		};
+		5F410CE0221B29A300979E20 /* Prod */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6VUTP72GG4;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+					"$(PROJECT_DIR)/Carthage/Checkouts/blinkid-ios",
+				);
+				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
+				INFOPLIST_FILE = "$(SRCROOT)/Sample/SupportingFiles/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_SWIFT_FLAGS = "-DSTAGING";
+				PRODUCT_BUNDLE_IDENTIFIER = "${inherited}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Prod;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5F95E258221B1333007B6035 /* Build configuration list for PBXProject "Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F410CDF221B29A300979E20 /* Prod */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Prod;
+		};
+		5F95E285221B1334007B6035 /* Build configuration list for PBXNativeTarget "Sample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5F410CE0221B29A300979E20 /* Prod */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Prod;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5F95E255221B1333007B6035 /* Project object */;
+}
