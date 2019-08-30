@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>FILEHEADER</key>
+	<string>
+//  Yoti Doc Scan iOS SDK, Sample.
+//  Created by ___FULLUSERNAME___.
+//
+//  Copyright (c) Yoti Ltd ___YEAR___.
+//  All rights reserved.
+//  See LICENSE.md for license.
+//</string>
+</dict>
+</plist>
