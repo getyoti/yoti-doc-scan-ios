@@ -64,6 +64,11 @@ Add the following libraries at `Build Phases` → `Link Binary With Libraries`
 And the following resources at `Build Phases` → `Copy Bundle Resources`
 - `Microblink.bundle`
 
+Additionally, you should use [Git LFS](https://git-lfs.github.com) to track the `Microblink.bundle`, for example:
+```bash
+git lfs track "<path>/Microblink.bundle/**"
+```
+
 ## Integration
 
 ### 1. Launching the SDK
