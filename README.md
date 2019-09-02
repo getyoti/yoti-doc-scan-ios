@@ -1,4 +1,3 @@
-
 # Yoti Doc Scan iOS SDK
 
 ![Illustration](./Illustration.png)
@@ -171,26 +170,26 @@ func yotiDocScan(
 ## Error Handling
 Please refer to the following table for a description of error codes that may be returned to you as part of a failed verification.
 
-Code | Description
-:-- | :--
-1000 | No error occurred. The user cancelled the session for an unknown reason
-2000 | Unauthorised request (wrong or expired session token)
-2001 | Session not found
-2002 | Session expired
-2003 | SDK launched without session Token
-2004 | SDK launched without session ID
-3000 | Yoti's services are down or unable to process the request
-3001 | An error occurred during a network request
-3002 | User has no network
-4000 | The user did not grant permission to the camera
-5000 | No camera. The user's camera was not found and file upload is not allowed
-6000 | SDK is out-of-date. Please update the SDK to the latest version
-6001 | Unexpected internal error
-6002 | Unexpected document scanning error
+Code | Description | Retry possible (same session)
+:-- | :-- | :--
+1000 | No error occurred. The user cancelled the session for an unknown reason | Yes
+2000 | Unauthorised request (wrong or expired session token) | Yes
+2001 | Session not found | Yes
+2002 | Session expired | Yes
+2003 | SDK launched without session Token | Yes
+2004 | SDK launched without session ID | Yes
+3000 | Yoti's services are down or unable to process the request | Yes
+3001 | An error occurred during a network request | Yes
+3002 | User has no network | Yes
+4000 | The user did not grant permission to the camera | Yes
+5000 | No camera. The user's camera was not found and file upload is not allowed | No
+6000 | SDK is out-of-date. Please update the SDK to the latest version | No
+6001 | Unexpected internal error | No
+6002 | Unexpected document scanning error | No
 
 ## Support
 If you have any other questions please do not hesitate to contact sdksupport@yoti.com.
 Once we have answered your question we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
 
-## License
-Please find the licence for the Yoti Doc Scan iOS SDK [here](https//www.yoti.com/wp-content/uploads/2019/08/Yoti-Doc-Scan-SDK-Terms.pdf).
+## Licence
+Please find the licence for the Yoti Doc Scan iOS SDK [here](https://www.yoti.com/wp-content/uploads/2019/08/Yoti-Doc-Scan-SDK-Terms.pdf).
