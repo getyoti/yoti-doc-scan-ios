@@ -22,10 +22,19 @@ brew upgrade carthage
 brew upgrade git-lfs
 ```
 
-Create a [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) in the same directory where your `.xcodeproj` or `.xcworkspace` is and add the following line to it:
+Create a [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) in the same directory where your `.xcodeproj` or `.xcworkspace` is and add the following lines to it:
+
+Swift 5.0:
 ```bash
 github "getyoti/yoti-doc-scan-ios" == 1.0.0
 github "getyoti/yoti-doc-capture-ios" == 1.5.0
+github "BlinkID/blinkid-ios" == 4.7.0
+```
+
+Swift 5.1 and above:
+```bash
+github "getyoti/yoti-doc-scan-ios" == 1.0.1
+github "getyoti/yoti-doc-capture-ios" == 1.5.1
 github "BlinkID/blinkid-ios" == 4.7.0
 ```
 
