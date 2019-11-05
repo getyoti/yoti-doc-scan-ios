@@ -16,6 +16,8 @@
 		5F80BB77222EE19D0054E619 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F80BB76222EE19D0054E619 /* libc++.tbd */; };
 		5F80BB97222EECD60054E619 /* Microblink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F80BB96222EECD60054E619 /* Microblink.bundle */; };
 		5F95E268221B1334007B6035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F95E267221B1334007B6035 /* Assets.xcassets */; };
+		5FD0601D23719DC7006DEF4E /* ZoomAuthenticationHybrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD0601B23719D9F006DEF4E /* ZoomAuthenticationHybrid.framework */; };
+		5FD0601E23719DC7006DEF4E /* ZoomAuthenticationHybrid.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD0601B23719D9F006DEF4E /* ZoomAuthenticationHybrid.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FE77A6923192C7C00F265B4 /* Microblink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE77A6823192C7C00F265B4 /* Microblink.framework */; };
 		5FE77A6A23192C7C00F265B4 /* Microblink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE77A6823192C7C00F265B4 /* Microblink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -28,6 +30,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5FE77A6A23192C7C00F265B4 /* Microblink.framework in Embed Frameworks */,
+				5FD0601E23719DC7006DEF4E /* ZoomAuthenticationHybrid.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -49,6 +52,7 @@
 		5F95E25D221B1333007B6035 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F95E267221B1334007B6035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F95E26C221B1334007B6035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FD0601B23719D9F006DEF4E /* ZoomAuthenticationHybrid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZoomAuthenticationHybrid.framework; sourceTree = "<group>"; };
 		5FE77A6823192C7C00F265B4 /* Microblink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Microblink.framework; path = "Carthage/Checkouts/blinkid-ios/Microblink.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,6 +62,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F54433223184B1700D81A1B /* libiconv.tbd in Frameworks */,
+				5FD0601D23719DC7006DEF4E /* ZoomAuthenticationHybrid.framework in Frameworks */,
 				5F80BB73222EE18B0054E619 /* libz.tbd in Frameworks */,
 				5FE77A6923192C7C00F265B4 /* Microblink.framework in Frameworks */,
 				5F80BB77222EE19D0054E619 /* libc++.tbd in Frameworks */,
@@ -89,6 +94,7 @@
 		5F80BB62222EDA460054E619 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5FD0601B23719D9F006DEF4E /* ZoomAuthenticationHybrid.framework */,
 				5FE77A6823192C7C00F265B4 /* Microblink.framework */,
 				5F80BB7F222EE3DB0054E619 /* AVFoundation.framework */,
 				5F80BB7D222EE3D30054E619 /* CoreMedia.framework */,
@@ -344,10 +350,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Checkouts/blinkid-ios",
+					"$(PROJECT_DIR)",
 				);
 				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Sample/SupportingFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -356,7 +363,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "${inherited}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Prod;
