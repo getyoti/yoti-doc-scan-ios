@@ -16,8 +16,6 @@
 		5F80BB77222EE19D0054E619 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F80BB76222EE19D0054E619 /* libc++.tbd */; };
 		5F80BB97222EECD60054E619 /* Microblink.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5F80BB96222EECD60054E619 /* Microblink.bundle */; };
 		5F95E268221B1334007B6035 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F95E267221B1334007B6035 /* Assets.xcassets */; };
-		5FD0601D23719DC7006DEF4E /* ZoomAuthenticationHybrid.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD0601B23719D9F006DEF4E /* ZoomAuthenticationHybrid.framework */; };
-		5FD0601E23719DC7006DEF4E /* ZoomAuthenticationHybrid.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD0601B23719D9F006DEF4E /* ZoomAuthenticationHybrid.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5FE77A6923192C7C00F265B4 /* Microblink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE77A6823192C7C00F265B4 /* Microblink.framework */; };
 		5FE77A6A23192C7C00F265B4 /* Microblink.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FE77A6823192C7C00F265B4 /* Microblink.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -30,7 +28,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				5FE77A6A23192C7C00F265B4 /* Microblink.framework in Embed Frameworks */,
-				5FD0601E23719DC7006DEF4E /* ZoomAuthenticationHybrid.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,7 +59,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5F54433223184B1700D81A1B /* libiconv.tbd in Frameworks */,
-				5FD0601D23719DC7006DEF4E /* ZoomAuthenticationHybrid.framework in Frameworks */,
 				5F80BB73222EE18B0054E619 /* libz.tbd in Frameworks */,
 				5FE77A6923192C7C00F265B4 /* Microblink.framework in Frameworks */,
 				5F80BB77222EE19D0054E619 /* libc++.tbd in Frameworks */,
@@ -234,6 +230,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/YotiDocScan.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ScanDocument.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ZoomAuthenticationHybrid.framework",
 			);
 			name = "Carthage Copy Bitcode Files";
 			outputFileListPaths = (
@@ -241,6 +238,7 @@
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/YotiDocScan.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ScanDocument.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ZoomAuthenticationHybrid.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

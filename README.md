@@ -2,14 +2,14 @@
 
 ![Illustration](./Illustration.png)
 
-The Yoti Doc Scan iOS SDK allows a user of your app to take a photo of their ID, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.
+The Yoti Doc Scan iOS SDK allows a user of your app to take a photo of their ID, as well as to scan their face, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.
 
 ## Prerequisites
 In order to integrate with the iOS SDK of Yoti Doc Scan, a working infrastructure is needed.
 Please see [developers.yoti.com](https://developers.yoti.com/yoti-doc-scan/yoti-doc-scan-integration-introduction) for more details.
 
 ## Requirements
-- iOS 10+
+- iOS 11+
 - Swift 5+
 
 ## Installation
@@ -23,18 +23,9 @@ brew upgrade git-lfs
 ```
 
 Create a [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) in the same directory where your `.xcodeproj` or `.xcworkspace` is and add the following lines to it:
-
-Swift 5.0:
 ```bash
-github "getyoti/yoti-doc-scan-ios" == 1.0.0
-github "getyoti/yoti-doc-capture-ios" == 1.5.0
-github "BlinkID/blinkid-ios" == 4.7.0
-```
-
-Swift 5.1 and above:
-```bash
-github "getyoti/yoti-doc-scan-ios" == 1.0.1
-github "getyoti/yoti-doc-capture-ios" == 1.5.1
+github "getyoti/yoti-doc-scan-ios" == 1.1.0
+github "getyoti/yoti-doc-capture-ios" == 1.5.5
 github "BlinkID/blinkid-ios" == 4.7.0
 ```
 
@@ -55,12 +46,14 @@ On your application targets' `Build Phases` tab:
 ```bash
 $(SRCROOT)/Carthage/Build/iOS/YotiDocScan.framework
 $(SRCROOT)/Carthage/Build/iOS/ScanDocument.framework
+$(SRCROOT)/Carthage/Build/iOS/ZoomAuthenticationHybrid.framework
 ```
 
 - Then add the paths to the copied frameworks under `Output Files`:
 ```bash
 $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/YotiDocScan.framework
 $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ScanDocument.framework
+$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ZoomAuthenticationHybrid.framework
 ```
 
 ### Add Libraries and Resources
