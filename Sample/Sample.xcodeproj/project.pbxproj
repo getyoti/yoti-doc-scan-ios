@@ -49,6 +49,7 @@
 		5F95E25D221B1333007B6035 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F95E267221B1334007B6035 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F95E26C221B1334007B6035 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5FD0601B23719D9F006DEF4E /* ZoomAuthenticationHybrid.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ZoomAuthenticationHybrid.framework; sourceTree = "<group>"; };
 		5FE77A6823192C7C00F265B4 /* Microblink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Microblink.framework; path = "Carthage/Checkouts/blinkid-ios/Microblink.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +90,7 @@
 		5F80BB62222EDA460054E619 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5FD0601B23719D9F006DEF4E /* ZoomAuthenticationHybrid.framework */,
 				5FE77A6823192C7C00F265B4 /* Microblink.framework */,
 				5F80BB7F222EE3DB0054E619 /* AVFoundation.framework */,
 				5F80BB7D222EE3D30054E619 /* CoreMedia.framework */,
@@ -228,6 +230,7 @@
 			inputPaths = (
 				"$(SRCROOT)/Carthage/Build/iOS/YotiDocScan.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/ScanDocument.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/ZoomAuthenticationHybrid.framework",
 			);
 			name = "Carthage Copy Bitcode Files";
 			outputFileListPaths = (
@@ -235,6 +238,7 @@
 			outputPaths = (
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/YotiDocScan.framework",
 				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ScanDocument.framework",
+				"$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ZoomAuthenticationHybrid.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -344,10 +348,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 					"$(PROJECT_DIR)/Carthage/Checkouts/blinkid-ios",
+					"$(PROJECT_DIR)",
 				);
 				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
 				INFOPLIST_FILE = "$(SRCROOT)/Sample/SupportingFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

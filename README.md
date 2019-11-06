@@ -2,14 +2,14 @@
 
 ![Illustration](./Illustration.png)
 
-The Yoti Doc Scan iOS SDK allows a user of your app to take a photo of their ID, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.
+The Yoti Doc Scan iOS SDK allows a user of your app to take a photo of their ID, as well as to scan their face, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.
 
 ## Prerequisites
 In order to integrate with the iOS SDK of Yoti Doc Scan, a working infrastructure is needed.
 Please see [developers.yoti.com](https://developers.yoti.com/yoti-doc-scan/yoti-doc-scan-integration-introduction) for more details.
 
 ## Requirements
-- iOS 10+
+- iOS 11+
 - Swift 5+
 
 ## Installation
@@ -23,18 +23,9 @@ brew upgrade git-lfs
 ```
 
 Create a [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) in the same directory where your `.xcodeproj` or `.xcworkspace` is and add the following lines to it:
-
-Swift 5.0:
 ```bash
-github "getyoti/yoti-doc-scan-ios" == 1.0.0
-github "getyoti/yoti-doc-capture-ios" == 1.5.0
-github "BlinkID/blinkid-ios" == 4.7.0
-```
-
-Swift 5.1 and above:
-```bash
-github "getyoti/yoti-doc-scan-ios" == 1.0.1
-github "getyoti/yoti-doc-capture-ios" == 1.5.1
+github "getyoti/yoti-doc-scan-ios" == 1.1.0
+github "getyoti/yoti-doc-capture-ios" == 1.5.5
 github "BlinkID/blinkid-ios" == 4.7.0
 ```
 
@@ -55,12 +46,14 @@ On your application targets' `Build Phases` tab:
 ```bash
 $(SRCROOT)/Carthage/Build/iOS/YotiDocScan.framework
 $(SRCROOT)/Carthage/Build/iOS/ScanDocument.framework
+$(SRCROOT)/Carthage/Build/iOS/ZoomAuthenticationHybrid.framework
 ```
 
 - Then add the paths to the copied frameworks under `Output Files`:
 ```bash
 $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/YotiDocScan.framework
 $(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ScanDocument.framework
+$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ZoomAuthenticationHybrid.framework
 ```
 
 ### Add Libraries and Resources
@@ -192,9 +185,11 @@ Code | Description | Retry possible (same session)
 3002 | User has no network | Yes
 4000 | The user did not grant permission to the camera | Yes
 5000 | No camera. The user's camera was not found and file upload is not allowed | No
-6000 | SDK is out-of-date. Please update the SDK to the latest version | No
-6001 | Unexpected internal error | No
-6002 | Unexpected document scanning error | No
+5002 | No more local tries for the liveness flow | Yes
+5003 | SDK is out-of-date, please update the SDK to the latest version | No
+5004 | An unexpected internal error occurred | No
+5005 | An unexpected document capture error occurred | No
+5006 | An unexpected liveness capture error occurred | No
 
 ## Support
 If you have any other questions please do not hesitate to contact sdksupport@yoti.com.
