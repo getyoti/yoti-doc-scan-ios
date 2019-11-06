@@ -185,9 +185,11 @@ Code | Description | Retry possible (same session)
 3002 | User has no network | Yes
 4000 | The user did not grant permission to the camera | Yes
 5000 | No camera. The user's camera was not found and file upload is not allowed | No
-6000 | SDK is out-of-date. Please update the SDK to the latest version | No
-6001 | Unexpected internal error | No
-6002 | Unexpected document scanning error | No
+5002 | No more local tries for the liveness flow | Yes
+5003 | SDK is out-of-date, please update the SDK to the latest version | No
+5004 | An unexpected internal error occurred | No
+5005 | An unexpected document capture error occurred | No
+5006 | An unexpected liveness capture error occurred | No
 
 ## Support
 If you have any other questions please do not hesitate to contact sdksupport@yoti.com.
