@@ -24,7 +24,7 @@ brew upgrade git-lfs
 
 Create a [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) in the same directory where your `.xcodeproj` or `.xcworkspace` is and add the following lines to it:
 ```bash
-github "getyoti/yoti-doc-scan-ios" == 1.1.0
+github "getyoti/yoti-doc-scan-ios" == 1.1.1
 github "getyoti/yoti-doc-capture-ios" == 1.5.5
 github "BlinkID/blinkid-ios" == 4.7.0
 ```
