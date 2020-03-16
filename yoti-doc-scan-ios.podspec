@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "yoti-doc-scan-ios"
-  spec.version      = "1.1.0"
+  spec.version      = "1.1.2"
   spec.summary      = "Verify users with a photo of their ID, as well as scan of their face."
 
   # This description is used to generate tags and improve search results.
