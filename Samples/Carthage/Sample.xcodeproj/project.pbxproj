@@ -148,7 +148,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
-				ORGANIZATIONNAME = "Yoti Limited";
+				ORGANIZATIONNAME = "Yoti Ltd";
 				TargetAttributes = {
 					5F95E25C221B1333007B6035 = {
 						CreatedOnToolsVersion = 10.1;
