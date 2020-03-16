@@ -20,11 +20,11 @@ final class ViewController: UIViewController {
         // its supported module types.
         navigationController.sdkDataSource = self
 
-        // Set the delegate in order to specify the style used for the
-        // UI and to handle the result of the verification process.
+        // Set the delegate in order to specify the primary color used for
+        // the UI and to handle the result of the verification process.
         navigationController.sdkDelegate = self
 
-        // Present the Yoti SDK navigation controller.
+        // Present the `YotiSDKNavigationController`.
         present(navigationController, animated: true, completion: nil)
     }
 }
