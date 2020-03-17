@@ -2,4 +2,4 @@
 *.xcworkspace/xcuserdata
 .DS_Store
 .build
-/Carthage
+/Samples/Carthage/Carthage
