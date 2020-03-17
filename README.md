@@ -14,8 +14,8 @@ In order to integrate with our SDK, a working infrastructure is needed (see [dev
 ## Installation
 Make sure you are running the latest version of:
 - [Git LFS](https://git-lfs.github.com)
-- `Optional` [CocoaPods](https://guides.cocoapods.org/using/getting-started.html)
-- `Optional` [Carthage](https://github.com/Carthage/Carthage)
+- [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) (Optional)
+- [Carthage](https://github.com/Carthage/Carthage) (Optional)
 
 ### CocoaPods
 Add the following lines to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html):
@@ -30,7 +30,7 @@ pod 'YotiSDKZoom', '2.0.0'
 Please refer to the [Installation](Installation/Carthage) folder of this repository, and locate the [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile), `Input.xcfilelist` and `Output.xcfilelist` that matches the combination of capabilities that you wish to support.
 
 #### 2. Build dependencies
-Run `carthage bootstrap` from the root of your project directory, in which its `Cartfile` is also located.
+Run `carthage bootstrap` from the root of your project directory, in which its `Cartfile` should also be located.
 
 #### 3. Copy frameworks
 On your application targets' `Build Phases` tab:
@@ -43,8 +43,8 @@ On your application targets' `Build Phases` tab:
 - Add the `Input.xcfilelist` to the `Input File Lists` section of the script
 - Add the `Output.xcfilelist` to the `Output File Lists` section of the script
 
-#### 3. Link libraries (Optional)
-If `YotiSDKDocument` is specified as part of your dependencies, then link the following libraries at `Build Phases` → `Link Binary With Libraries`:
+#### 4. Link with libraries (Optional)
+If `YotiSDKDocument` is specified as part of your dependencies, then add the following libraries at `Build Phases` → `Link Binary With Libraries`:
 - `AVFoundation.framework`
 - `AudioToolbox.framework`
 - `CoreMedia.framework`
@@ -58,8 +58,8 @@ Import the frameworks needed for your implementation:
 ```swift
 import YotiSDKCommon
 import YotiSDKCore
-import YotiSDKDocument  // Include to capture and verify an identity document.
-import YotiSDKZoom      // Include to perform a face scan.
+import YotiSDKDocument  // Optional. Include to capture and verify an identity document.
+import YotiSDKZoom      // Optional. Include to perform a face scan.
 ```
 
 ### 2. Launching the SDK
@@ -88,7 +88,7 @@ func sessionToken(for navigationController: YotiSDKNavigationController) -> Stri
 }
 
 func supportedModuleTypes(for navigationController: YotiSDKNavigationController) -> [YotiSDKModule.Type] {
-    [YotiSDKDocument.self, YotiSDKZoom.self] // Include only the module types you wish to support.
+    [YotiSDKDocument.self, YotiSDKZoom.self] // Return only the module types you wish to support.
 }
 ```
 
@@ -115,7 +115,7 @@ func navigationController(_ navigationController: YotiSDKNavigationController, d
 ```
 
 ## Error Handling
-Please refer to the following table of error codes that may be returned to you as part of a failed verification.
+Please refer to the following table of error codes that may be returned as part of a failed verification.
 Code | Description | Retry possible (same session)
 :-- | :-- | :--
 1000 | No error occurred. The user cancelled the session | Yes
