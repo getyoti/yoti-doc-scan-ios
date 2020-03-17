@@ -43,7 +43,7 @@ On your application targets' `Build Phases` tab:
 - Add the `Input.xcfilelist` to the `Input File Lists` section of the script
 - Add the `Output.xcfilelist` to the `Output File Lists` section of the script
 
-#### 4. Link with libraries (Optional)
+#### 4. Link with libraries and add resources (Optional)
 If `YotiSDKDocument` is specified as part of your dependencies, then add the following libraries at `Build Phases` → `Link Binary With Libraries`:
 - `AVFoundation.framework`
 - `AudioToolbox.framework`
@@ -51,6 +51,8 @@ If `YotiSDKDocument` is specified as part of your dependencies, then add the fol
 - `libc++.tbd`
 - `libiconv.tbd`
 - `libz.tbd`
+
+In addition, the `Microblink.bundle` should be added at `Build Phases` → `Copy Bundle Resources`
 
 ## Integration
 ### 1. Import frameworks
