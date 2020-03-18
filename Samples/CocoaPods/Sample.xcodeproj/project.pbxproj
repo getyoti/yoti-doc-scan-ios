@@ -21,6 +21,7 @@
 		20335693241668E500F628E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20335695241668E500F628E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20335698241668E500F628E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20ABE58E2422538700E5A97E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		5F95E25D221B1333007B6035 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -57,6 +58,7 @@
 		5F95E254221B1333007B6035 = {
 			isa = PBXGroup;
 			children = (
+				20ABE58E2422538700E5A97E /* Podfile */,
 				5F95E25E221B1333007B6035 /* Products */,
 				2033568B241668E500F628E8 /* Sources */,
 			);
