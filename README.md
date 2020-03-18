@@ -1,64 +1,50 @@
-# Yoti Doc Scan iOS SDK
+# Yoti Doc Scan, iOS SDK
 
 ![Illustration](./Illustration.png)
 
-The Yoti Doc Scan iOS SDK allows a user of your app to take a photo of their ID, as well as to scan their face, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.
+Integrating with our SDK allows a user of your app to take a photo of their ID, as well as to scan their face, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.
 
 ## Prerequisites
-In order to integrate with the iOS SDK of Yoti Doc Scan, a working infrastructure is needed.
-Please see [developers.yoti.com](https://developers.yoti.com/yoti-doc-scan/yoti-doc-scan-integration-introduction) for more details.
+In order to integrate with our SDK, a working infrastructure is needed (see [developers.yoti.com](https://developers.yoti.com/yoti-doc-scan/yoti-doc-scan-integration-introduction) for more details).
 
 ## Requirements
 - iOS 11+
 - Swift 5+
 
 ## Installation
+Make sure you've installed and are running the latest version of:
+- [Git LFS](https://git-lfs.github.com)
+- [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) (Optional)
+- [Carthage](https://github.com/Carthage/Carthage) (Optional)
+
+### CocoaPods
+Add the following lines to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html):
+```bash
+pod 'YotiSDKDocument', '2.0.0'
+pod 'YotiSDKZoom', '2.0.0'
+```
+**Note**: If you wish to support only capturing and verifying an identity document, then add only `YotiSDKDocument`. If you wish to support only performing a face scan, then add only `YotiSDKZoom`.
 
 ### Carthage
-Make sure you are running the latest version of [Carthage](https://github.com/carthage/carthage) and [Git LFS](https://git-lfs.github.com) by running:
-```bash
-brew update
-brew upgrade carthage
-brew upgrade git-lfs
-```
+#### 1. Choose or configure necessary files
+Please refer to the [Installation](Installation/Carthage) folder of this repository, and locate the [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile), `Input.xcfilelist` and `Output.xcfilelist` that matches the combination of capabilities that you wish to support.
 
-Create a [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) in the same directory where your `.xcodeproj` or `.xcworkspace` is and add the following lines to it:
-```bash
-github "getyoti/yoti-doc-scan-ios" == 1.1.2
-github "getyoti/yoti-doc-capture-ios" == 1.5.5
-github "BlinkID/blinkid-ios" == 4.7.0
-```
+#### 2. Build dependencies
+Run `carthage bootstrap` from the root of your project directory, in which its `Cartfile` should also be located.
 
-Run `carthage update`.
-
-**Note:** This will fetch dependencies into a `Carthage/Checkouts` folder, then copy `YotiDocScan.framework` and `ScanDocument.framework` into a `Carthage/Build/iOS` folder. Please find `Microblink.framework` and `Microblink.bundle` in the `Carthage/Checkouts/blinkid-ios` folder.
-
-
+#### 3. Copy frameworks
 On your application targets' `Build Phases` tab:
-- Click `+` icon and choose `New Run Script Phase`.
-- Create a script with a shell of your choice (e.g. `/bin/sh`).
+- Click `+` icon and choose `New Run Script Phase`
+- Create a script with a shell of your choice (e.g. `/bin/sh`)
 - Add the following to the script area below the shell:
 ```bash
 /usr/local/bin/carthage copy-frameworks
 ```
+- Add the `Input.xcfilelist` to the `Input File Lists` section of the script
+- Add the `Output.xcfilelist` to the `Output File Lists` section of the script
 
-- Add the paths to the frameworks you want to use under `Input Files`:
-```bash
-$(SRCROOT)/Carthage/Build/iOS/YotiDocScan.framework
-$(SRCROOT)/Carthage/Build/iOS/ScanDocument.framework
-$(SRCROOT)/Carthage/Build/iOS/ZoomAuthenticationHybrid.framework
-```
-
-- Then add the paths to the copied frameworks under `Output Files`:
-```bash
-$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/YotiDocScan.framework
-$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ScanDocument.framework
-$(BUILT_PRODUCTS_DIR)/$(FRAMEWORKS_FOLDER_PATH)/ZoomAuthenticationHybrid.framework
-```
-
-### Add Libraries and Resources
-Add the following libraries at `Build Phases` → `Link Binary With Libraries`
-- `Microblink.framework`
+#### 4. Link with libraries and add resources (Optional)
+If `YotiSDKDocument` is specified as part of your dependencies, then add the following libraries at `Build Phases` → `Link Binary With Libraries`:
 - `AVFoundation.framework`
 - `AudioToolbox.framework`
 - `CoreMedia.framework`
@@ -66,103 +52,64 @@ Add the following libraries at `Build Phases` → `Link Binary With Libraries`
 - `libiconv.tbd`
 - `libz.tbd`
 
-And the following resources at `Build Phases` → `Copy Bundle Resources`
-- `Microblink.bundle`
-
-In addition, you should use [Git LFS](https://git-lfs.github.com) to track the `Microblink.bundle`:
-```bash
-git lfs track "<path>/Microblink.bundle/**"
-```
-
-### Configuration
-Add a `Strip Unused Architectures` script
-
-On your application targets' `Build Phases` tab:
-- Click `+` icon and choose `New Run Script Phase`.
-- Create a script with a shell of your choice (e.g. `/bin/sh`).
-- Add the following to the script area below the shell:
-```bash
-APP_PATH="${TARGET_BUILD_DIR}/${WRAPPER_NAME}"
-
-# This script loops through the frameworks embedded in the application and
-# removes unused architectures.
-find "$APP_PATH" -name '*.framework' -type d | while read -r FRAMEWORK
-do
-FRAMEWORK_EXECUTABLE_NAME=$(defaults read "$FRAMEWORK/Info.plist" CFBundleExecutable)
-FRAMEWORK_EXECUTABLE_PATH="$FRAMEWORK/$FRAMEWORK_EXECUTABLE_NAME"
-echo "Executable is $FRAMEWORK_EXECUTABLE_PATH"
-
-EXTRACTED_ARCHS=()
-
-for ARCH in $ARCHS
-do
-echo "Extracting $ARCH from $FRAMEWORK_EXECUTABLE_NAME"
-lipo -extract "$ARCH" "$FRAMEWORK_EXECUTABLE_PATH" -o "$FRAMEWORK_EXECUTABLE_PATH-$ARCH"
-EXTRACTED_ARCHS+=("$FRAMEWORK_EXECUTABLE_PATH-$ARCH")
-done
-
-echo "Merging extracted architectures: ${ARCHS}"
-lipo -o "$FRAMEWORK_EXECUTABLE_PATH-merged" -create "${EXTRACTED_ARCHS[@]}"
-rm "${EXTRACTED_ARCHS[@]}"
-
-echo "Replacing original executable with thinned version"
-rm "$FRAMEWORK_EXECUTABLE_PATH"
-mv "$FRAMEWORK_EXECUTABLE_PATH-merged" "$FRAMEWORK_EXECUTABLE_PATH"
-done
-```
+In addition, the `Microblink.bundle` should be added at `Build Phases` → `Copy Bundle Resources`
 
 ## Integration
-
-### 1. Launching the SDK
-Perform the following actions to initialize and present the SDK.
+### 1. Import frameworks
+Import the frameworks needed for your implementation:
 ```swift
-// Create an instance of our navigation controller.
-let navigationController = YotiDocScanNavigationController()
+import YotiSDKCommon
+import YotiSDKCore
+import YotiSDKDocument  // Optional. Include to capture and verify an identity document.
+import YotiSDKZoom      // Optional. Include to perform a face scan.
+```
 
-// To specify the `sessionID` and `clientSessionToken`.
-navigationController.yotiDocScanDataSource = self
+### 2. Launching the SDK
+Initialize and present the `YotiSDKNavigationController`:
+```swift
+let navigationController = YotiSDKNavigationController()
+
+// To specify the session and its supported module types.
+navigationController.sdkDataSource = self
 
 // To perform UI customizations and to handle the verification result.
-navigationController.yotiDocScanDelegate = self
+navigationController.sdkDelegate = self
 
-// Present the navigation controller.
 present(navigationController, animated: true, completion: nil)
 ```
 
-### 2. Specifying the Session ID and Client Session Token
-Conform to `YotiDocScanDataSource`.
+### 3. Specifying the session and its supported module types
+Conform to `YotiSDKDataSource`:
 ```swift
-// Configuring the Session ID is required.
-func sessionID(for navigationController: YotiDocScanNavigationController) -> String {
-    return "Please insert the [Session ID] here"
+func sessionID(for navigationController: YotiSDKNavigationController) -> String {
+    "[Session ID]"
 }
 
-// Configuring the Client Session Token is required.
-func clientSessionToken(for navigationController: YotiDocScanNavigationController) -> String {
-    return "Please insert the [Client Session Token] here"
+func sessionToken(for navigationController: YotiSDKNavigationController) -> String {
+    "[Session Token]"
+}
+
+func supportedModuleTypes(for navigationController: YotiSDKNavigationController) -> [YotiSDKModule.Type] {
+    [YotiSDKDocument.self, YotiSDKZoom.self] // Return only the module types you wish to support.
 }
 ```
 
-### 3. UI customizations and handling the verification result
-Conform to `YotiDocScanDelegate`.
+### 4. UI customizations and handling the verification result
+Conform to `YotiSDKDelegate`:
 ```swift
-// Configuring the primary color is optional.
-func primaryColor(for navigationController: YotiDocScanNavigationController) -> UIColor {
+// Optional.
+func primaryColor(for navigationController: YotiSDKNavigationController) -> UIColor {
     return .blue
 }
 
-// Handle the result of the verification process.
-func yotiDocScan(
-    _ navigationController: YotiDocScanNavigationController,
-    didFinishWithResult result: YotiDocScanResult) {
-
+func navigationController(_ navigationController: YotiSDKNavigationController, didFinishWithResult result: YotiSDKResult) {
     // Dismiss the SDK.
     dismiss(animated: true)
 
     // Handle the result from the SDK.
     switch result {
     case .success:
-        return
+        break
     case .failure(let error):
         print(error)
     }
@@ -170,11 +117,10 @@ func yotiDocScan(
 ```
 
 ## Error Handling
-Please refer to the following table for a description of error codes that may be returned to you as part of a failed verification.
-
+Please refer to the following table of error codes that may be returned as part of a failed verification.
 Code | Description | Retry possible (same session)
 :-- | :-- | :--
-1000 | No error occurred. The user cancelled the session for an unknown reason | Yes
+1000 | No error occurred. The user cancelled the session | Yes
 2000 | Unauthorised request (wrong or expired session token) | Yes
 2001 | Session not found | Yes
 2002 | Session expired | Yes
@@ -184,7 +130,7 @@ Code | Description | Retry possible (same session)
 3001 | An error occurred during a network request | Yes
 3002 | User has no network | Yes
 4000 | The user did not grant permission to the camera | Yes
-5000 | No camera. The user's camera was not found and file upload is not allowed | No
+5000 | The user's camera was not found and file upload is not allowed | No
 5002 | No more local tries for the liveness flow | Yes
 5003 | SDK is out-of-date, please update the SDK to the latest version | No
 5004 | An unexpected internal error occurred | No
@@ -196,4 +142,4 @@ If you have any other questions please do not hesitate to contact sdksupport@yot
 Once we have answered your question we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
 
 ## Licence
-Please find the licence for the Yoti Doc Scan iOS SDK [here](https://www.yoti.com/wp-content/uploads/2019/08/Yoti-Doc-Scan-SDK-Terms.pdf).
+Please find the licence for the SDK [here](https://www.yoti.com/wp-content/uploads/2019/08/Yoti-Doc-Scan-SDK-Terms.pdf).

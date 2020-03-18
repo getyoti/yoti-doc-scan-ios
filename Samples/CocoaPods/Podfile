@@ -1,0 +1,7 @@
+platform :ios, '11.0'
+supports_swift_versions '>= 5.0'
+
+target 'Sample' do
+  pod 'YotiSDKDocument', '2.0.0'
+  pod 'YotiSDKZoom', '2.0.0'
+end
