@@ -37,6 +37,7 @@
 		205B3F1D2417E7E80049E418 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		205B3F1F2417E7F20049E418 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		205B3F212417E7FF0049E418 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		20ABE58C2422536E00E5A97E /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		5F95E25D221B1333007B6035 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -105,6 +106,7 @@
 		5F95E254221B1333007B6035 = {
 			isa = PBXGroup;
 			children = (
+				20ABE58C2422536E00E5A97E /* Cartfile */,
 				205B3F162417E7CB0049E418 /* Frameworks */,
 				5F95E25E221B1333007B6035 /* Products */,
 				2033568B241668E500F628E8 /* Sources */,
