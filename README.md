@@ -12,7 +12,7 @@ In order to integrate with our SDK, a working infrastructure is needed (see [dev
 - Swift 5+
 
 ## Installation
-Make sure you are running the latest version of:
+Make sure you've installed and are running the latest version of:
 - [Git LFS](https://git-lfs.github.com)
 - [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) (Optional)
 - [Carthage](https://github.com/Carthage/Carthage) (Optional)
