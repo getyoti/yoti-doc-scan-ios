@@ -116,6 +116,8 @@ func navigationController(_ navigationController: YotiSDKNavigationController, d
 }
 ```
 
+**Note**: To use our SDK, it's required to also add the [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) key to your `Info.plist`.
+
 ## Error Handling
 Please refer to the following table of error codes that may be returned as part of a failed verification.
 Code | Description | Retry possible (same session)
