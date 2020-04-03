@@ -20,8 +20,8 @@ Make sure you've installed and are running the latest version of:
 ### CocoaPods
 Add the following lines to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html):
 ```bash
-pod 'YotiSDKDocument', '2.0.0'
-pod 'YotiSDKZoom', '2.0.0'
+pod 'YotiSDKDocument'
+pod 'YotiSDKZoom'
 ```
 **Note**: If you wish to support only capturing and verifying an identity document, then add only `YotiSDKDocument`. If you wish to support only performing a face scan, then add only `YotiSDKZoom`.
 
@@ -115,6 +115,8 @@ func navigationController(_ navigationController: YotiSDKNavigationController, d
     }
 }
 ```
+
+**Note**: To use our SDK, it's required to also add the [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) key to your `Info.plist`.
 
 ## Error Handling
 Please refer to the following table of error codes that may be returned as part of a failed verification.
