@@ -18,10 +18,14 @@ Make sure you've installed and are running the latest version of:
 - [Carthage](https://github.com/Carthage/Carthage) (Optional)
 
 ### CocoaPods
-Add the following lines to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html):
+Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html):
 ```bash
-pod 'YotiSDKDocument'
-pod 'YotiSDKZoom'
+platform :ios, '11.4'
+
+target 'TargetName' do
+  pod 'YotiSDKDocument'
+  pod 'YotiSDKZoom'
+end
 ```
 **Note**: If you wish to support only capturing and verifying an identity document, then add only `YotiSDKDocument`. If you wish to support only performing a face scan, then add only `YotiSDKZoom`.
 
