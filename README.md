@@ -18,6 +18,7 @@ Make sure you've installed and are running the latest version of:
 - [Carthage](https://github.com/Carthage/Carthage) (Optional)
 
 ### CocoaPods
+#### 1. Configuration
 Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html):
 ```bash
 platform :ios, '11.4'
@@ -29,8 +30,13 @@ end
 ```
 **Note**: If you wish to support only capturing and verifying an identity document, then add only `YotiSDKDocument`. If you wish to support only performing a face scan, then add only `YotiSDKZoom`.
 
+#### 2. Link with libraries and add resources (Optional)
+If `YotiSDKDocument` is specified as part of your dependencies, then add the following libraries at `Build Phases` → `Link Binary With Libraries`:
+- `CoreNFC.framework`
+- `ExternalAccessory.framework`
+
 ### Carthage
-#### 1. Choose or configure necessary files
+#### 1. Configuration
 Please refer to the [Installation](Installation/Carthage) folder of this repository, and locate the [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile), `Input.xcfilelist` and `Output.xcfilelist` that matches the combination of capabilities that you wish to support.
 
 #### 2. Build dependencies
@@ -49,9 +55,11 @@ On your application targets' `Build Phases` tab:
 
 #### 4. Link with libraries and add resources (Optional)
 If `YotiSDKDocument` is specified as part of your dependencies, then add the following libraries at `Build Phases` → `Link Binary With Libraries`:
-- `AVFoundation.framework`
 - `AudioToolbox.framework`
+- `AVFoundation.framework`
 - `CoreMedia.framework`
+- `CoreNFC.framework`
+- `ExternalAccessory.framework`
 - `libc++.tbd`
 - `libiconv.tbd`
 - `libz.tbd`
@@ -90,7 +98,7 @@ func sessionID(for navigationController: YotiSDKNavigationController) -> String 
 }
 
 func sessionToken(for navigationController: YotiSDKNavigationController) -> String {
-    "[Session Token]"
+    "[Session token]"
 }
 
 func supportedModuleTypes(for navigationController: YotiSDKNavigationController) -> [YotiSDKModule.Type] {
@@ -120,7 +128,7 @@ func navigationController(_ navigationController: YotiSDKNavigationController, d
 }
 ```
 
-**Note**: To use our SDK, it's required to also add the [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) key to your `Info.plist`.
+**Note**: To use our SDK, it's required to add [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) to your `Info.plist`. If `YotiSDKDocument` is specified as part of your dependencies, then you should also add [`NFCReaderUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nfcreaderusagedescription) as well as turning on [`Near Field Communication Tag Reading`](https://developer.apple.com/documentation/corenfc/building_an_nfc_tag-reader_app) under the Signing & Capabilities tab for your project’s target.
 
 ## Error Handling
 Please refer to the following table of error codes that may be returned as part of a failed verification.
