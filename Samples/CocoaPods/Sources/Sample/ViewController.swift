@@ -36,7 +36,7 @@ extension ViewController: YotiSDKDataSource {
     }
 
     func sessionToken(for navigationController: YotiSDKNavigationController) -> String {
-        "[Session Token]"
+        "[Session token]"
     }
 
     func supportedModuleTypes(for navigationController: YotiSDKNavigationController) -> [YotiSDKModule.Type] {

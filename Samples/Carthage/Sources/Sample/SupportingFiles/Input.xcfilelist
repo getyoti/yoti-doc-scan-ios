@@ -7,5 +7,7 @@ $(SRCROOT)/Carthage/Build/iOS/YotiSDKCore.framework
 $(SRCROOT)/Carthage/Build/iOS/YotiSDKDocument.framework
 $(SRCROOT)/Carthage/Build/iOS/YotiSDKZoom.framework
 $(SRCROOT)/Carthage/Build/iOS/YotiDocumentCapture.framework
-$(SRCROOT)/Carthage/Build/iOS/ZoomAuthenticationHybrid.framework
+$(SRCROOT)/Carthage/Build/iOS/SwiftProtobuf.framework
+$(SRCROOT)/Carthage/Build/iOS/mrtddump.framework
+$(SRCROOT)/Carthage/Build/iOS/ZoomAuthentication.framework
 $(SRCROOT)/Carthage/Checkouts/blinkid-ios/Microblink.framework

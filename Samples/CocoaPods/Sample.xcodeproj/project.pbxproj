@@ -12,6 +12,8 @@
 		2033569B241668E500F628E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20335690241668E500F628E8 /* AppDelegate.swift */; };
 		2033569C241668E500F628E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20335692241668E500F628E8 /* LaunchScreen.storyboard */; };
 		2033569D241668E500F628E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20335694241668E500F628E8 /* Main.storyboard */; };
+		2043B524248825A100FF8AD8 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2043B5212488252A00FF8AD8 /* CoreNFC.framework */; };
+		2043B525248825A600FF8AD8 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2043B5222488254800FF8AD8 /* ExternalAccessory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +23,24 @@
 		20335693241668E500F628E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20335695241668E500F628E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20335698241668E500F628E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2043B5212488252A00FF8AD8 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
+		2043B5222488254800FF8AD8 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		2043B52824882A8400FF8AD8 /* Sample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sample.entitlements; sourceTree = "<group>"; };
 		20ABE58E2422538700E5A97E /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		5F95E25D221B1333007B6035 /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2043B5232488258500FF8AD8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2043B524248825A100FF8AD8 /* CoreNFC.framework in Frameworks */,
+				2043B525248825A600FF8AD8 /* ExternalAccessory.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		2033568B241668E500F628E8 /* Sources */ = {
@@ -47,6 +64,7 @@
 		20335691241668E500F628E8 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				2043B52824882A8400FF8AD8 /* Sample.entitlements */,
 				20335698241668E500F628E8 /* Info.plist */,
 				2033568F241668E500F628E8 /* Assets.xcassets */,
 				20335692241668E500F628E8 /* LaunchScreen.storyboard */,
@@ -55,10 +73,20 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
+		2043B5202488252A00FF8AD8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2043B5212488252A00FF8AD8 /* CoreNFC.framework */,
+				2043B5222488254800FF8AD8 /* ExternalAccessory.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5F95E254221B1333007B6035 = {
 			isa = PBXGroup;
 			children = (
 				20ABE58E2422538700E5A97E /* Podfile */,
+				2043B5202488252A00FF8AD8 /* Frameworks */,
 				5F95E25E221B1333007B6035 /* Products */,
 				2033568B241668E500F628E8 /* Sources */,
 			);
@@ -80,6 +108,7 @@
 			buildConfigurationList = 5F95E285221B1334007B6035 /* Build configuration list for PBXNativeTarget "Sample" */;
 			buildPhases = (
 				5F95E259221B1333007B6035 /* Sources */,
+				2043B5232488258500FF8AD8 /* Frameworks */,
 				5F95E25B221B1333007B6035 /* Resources */,
 			);
 			buildRules = (
@@ -241,6 +270,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Sources/Sample/SupportingFiles/Sample.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -252,10 +282,10 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Sample/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.2.0;
 				OTHER_CFLAGS = "";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.Sample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.yds.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -336,6 +366,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Sources/Sample/SupportingFiles/Sample.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -347,10 +378,10 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Sample/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.2.0;
 				OTHER_CFLAGS = "";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.Sample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.yds.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
