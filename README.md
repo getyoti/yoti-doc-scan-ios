@@ -23,6 +23,7 @@ Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-pod
 platform :ios, '11.4'
 
 target 'TargetName' do
+  use_frameworks!
   pod 'YotiSDKDocument'
   pod 'YotiSDKZoom'
 end
