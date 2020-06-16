@@ -18,7 +18,7 @@ Make sure you've installed and are running the latest version of:
 - [Carthage](https://github.com/Carthage/Carthage) (Optional)
 
 ### CocoaPods
-Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html):
+Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html) and run `pod install` from its directory:
 ```bash
 platform :ios, '11.4'
 
