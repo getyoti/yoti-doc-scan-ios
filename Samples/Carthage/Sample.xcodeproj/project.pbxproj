@@ -13,6 +13,7 @@
 		2033569B241668E500F628E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20335690241668E500F628E8 /* AppDelegate.swift */; };
 		2033569C241668E500F628E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20335692241668E500F628E8 /* LaunchScreen.storyboard */; };
 		2033569D241668E500F628E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20335694241668E500F628E8 /* Main.storyboard */; };
+		2043B51D2488240200FF8AD8 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2043B51C2488240200FF8AD8 /* CoreNFC.framework */; };
 		205B3F182417E7CB0049E418 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F172417E7CB0049E418 /* AudioToolbox.framework */; };
 		205B3F1A2417E7D90049E418 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F192417E7D90049E418 /* AVFoundation.framework */; };
 		205B3F1C2417E7DD0049E418 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F1B2417E7DD0049E418 /* CoreMedia.framework */; };
@@ -31,6 +32,8 @@
 		20335696241668E500F628E8 /* Output.xcfilelist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcfilelist; path = Output.xcfilelist; sourceTree = "<group>"; };
 		20335697241668E500F628E8 /* Input.xcfilelist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcfilelist; path = Input.xcfilelist; sourceTree = "<group>"; };
 		20335698241668E500F628E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2043B51C2488240200FF8AD8 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
+		2043B527248829FF00FF8AD8 /* Sample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sample.entitlements; sourceTree = "<group>"; };
 		205B3F172417E7CB0049E418 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		205B3F192417E7D90049E418 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		205B3F1B2417E7DD0049E418 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -46,12 +49,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				205B3F182417E7CB0049E418 /* AudioToolbox.framework in Frameworks */,
+				205B3F1A2417E7D90049E418 /* AVFoundation.framework in Frameworks */,
+				205B3F1C2417E7DD0049E418 /* CoreMedia.framework in Frameworks */,
+				2043B51D2488240200FF8AD8 /* CoreNFC.framework in Frameworks */,
 				205B3F222417E7FF0049E418 /* libz.tbd in Frameworks */,
 				205B3F202417E7F20049E418 /* libiconv.tbd in Frameworks */,
 				205B3F1E2417E7E80049E418 /* libc++.tbd in Frameworks */,
-				205B3F1C2417E7DD0049E418 /* CoreMedia.framework in Frameworks */,
-				205B3F1A2417E7D90049E418 /* AVFoundation.framework in Frameworks */,
-				205B3F182417E7CB0049E418 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				202A59E3241981C5008B6966 /* Microblink.bundle */,
+				2043B527248829FF00FF8AD8 /* Sample.entitlements */,
 				20335698241668E500F628E8 /* Info.plist */,
 				2033568F241668E500F628E8 /* Assets.xcassets */,
 				20335697241668E500F628E8 /* Input.xcfilelist */,
@@ -96,6 +101,7 @@
 				205B3F172417E7CB0049E418 /* AudioToolbox.framework */,
 				205B3F192417E7D90049E418 /* AVFoundation.framework */,
 				205B3F1B2417E7DD0049E418 /* CoreMedia.framework */,
+				2043B51C2488240200FF8AD8 /* CoreNFC.framework */,
 				205B3F1D2417E7E80049E418 /* libc++.tbd */,
 				205B3F1F2417E7F20049E418 /* libiconv.tbd */,
 				205B3F212417E7FF0049E418 /* libz.tbd */,
@@ -316,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Sources/Sample/SupportingFiles/Sample.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -327,10 +334,10 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Sample/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.2.0;
 				OTHER_CFLAGS = "";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.Sample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.yds.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
@@ -411,6 +418,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Sources/Sample/SupportingFiles/Sample.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -422,10 +430,10 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Sample/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 2.1.1;
+				MARKETING_VERSION = 2.2.0;
 				OTHER_CFLAGS = "";
 				OTHER_SWIFT_FLAGS = "";
-				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.Sample;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.yds.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;

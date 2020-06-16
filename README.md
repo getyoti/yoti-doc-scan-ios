@@ -18,11 +18,12 @@ Make sure you've installed and are running the latest version of:
 - [Carthage](https://github.com/Carthage/Carthage) (Optional)
 
 ### CocoaPods
-Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html):
+Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html) and run `pod install` from its directory:
 ```bash
 platform :ios, '11.4'
 
 target 'TargetName' do
+  use_frameworks!
   pod 'YotiSDKDocument'
   pod 'YotiSDKZoom'
 end
@@ -49,9 +50,10 @@ On your application targets' `Build Phases` tab:
 
 #### 4. Link with libraries and add resources (Optional)
 If `YotiSDKDocument` is specified as part of your dependencies, then add the following libraries at `Build Phases` → `Link Binary With Libraries`:
-- `AVFoundation.framework`
 - `AudioToolbox.framework`
+- `AVFoundation.framework`
 - `CoreMedia.framework`
+- `CoreNFC.framework`
 - `libc++.tbd`
 - `libiconv.tbd`
 - `libz.tbd`
@@ -90,7 +92,7 @@ func sessionID(for navigationController: YotiSDKNavigationController) -> String 
 }
 
 func sessionToken(for navigationController: YotiSDKNavigationController) -> String {
-    "[Session Token]"
+    "[Session token]"
 }
 
 func supportedModuleTypes(for navigationController: YotiSDKNavigationController) -> [YotiSDKModule.Type] {
@@ -120,7 +122,7 @@ func navigationController(_ navigationController: YotiSDKNavigationController, d
 }
 ```
 
-**Note**: To use our SDK, it's required to also add the [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) key to your `Info.plist`.
+**Note**: To use our SDK, it's required to add [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) to your `Info.plist`. If `YotiSDKDocument` is specified as part of your dependencies, then you should also add [`NFCReaderUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nfcreaderusagedescription) and include [`A0000002471001`](https://www.icao.int/publications/Documents/9303_p10_cons_en.pdf) under [`com.apple.developer.nfc.readersession.iso7816.select-identifiers`](https://developer.apple.com/documentation/bundleresources/information_property_list/select-identifiers) as well as turning on [`Near Field Communication Tag Reading`](https://developer.apple.com/documentation/corenfc/building_an_nfc_tag-reader_app) under the Signing & Capabilities tab for your project’s target.
 
 ## Error Handling
 Please refer to the following table of error codes that may be returned as part of a failed verification.
