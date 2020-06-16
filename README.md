@@ -18,7 +18,6 @@ Make sure you've installed and are running the latest version of:
 - [Carthage](https://github.com/Carthage/Carthage) (Optional)
 
 ### CocoaPods
-#### 1. Configuration
 Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html):
 ```bash
 platform :ios, '11.4'
@@ -30,13 +29,8 @@ end
 ```
 **Note**: If you wish to support only capturing and verifying an identity document, then add only `YotiSDKDocument`. If you wish to support only performing a face scan, then add only `YotiSDKZoom`.
 
-#### 2. Link with libraries and add resources (Optional)
-If `YotiSDKDocument` is specified as part of your dependencies, then add the following libraries at `Build Phases` → `Link Binary With Libraries`:
-- `CoreNFC.framework`
-- `ExternalAccessory.framework`
-
 ### Carthage
-#### 1. Configuration
+#### 1. Choose or configure necessary files
 Please refer to the [Installation](Installation/Carthage) folder of this repository, and locate the [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile), `Input.xcfilelist` and `Output.xcfilelist` that matches the combination of capabilities that you wish to support.
 
 #### 2. Build dependencies
