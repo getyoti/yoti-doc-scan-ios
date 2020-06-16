@@ -250,8 +250,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 2.2.0;
-				OTHER_CFLAGS = "";
-				OTHER_SWIFT_FLAGS = "";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.yds.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -340,8 +340,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				MARKETING_VERSION = 2.2.0;
-				OTHER_CFLAGS = "";
-				OTHER_SWIFT_FLAGS = "";
+				OTHER_CFLAGS = "$(inherited)";
+				OTHER_SWIFT_FLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.yds.Sample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
