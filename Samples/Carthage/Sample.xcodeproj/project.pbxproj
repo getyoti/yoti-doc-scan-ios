@@ -14,7 +14,6 @@
 		2033569C241668E500F628E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20335692241668E500F628E8 /* LaunchScreen.storyboard */; };
 		2033569D241668E500F628E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20335694241668E500F628E8 /* Main.storyboard */; };
 		2043B51D2488240200FF8AD8 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2043B51C2488240200FF8AD8 /* CoreNFC.framework */; };
-		2043B51F2488240E00FF8AD8 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2043B51E2488240E00FF8AD8 /* ExternalAccessory.framework */; };
 		205B3F182417E7CB0049E418 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F172417E7CB0049E418 /* AudioToolbox.framework */; };
 		205B3F1A2417E7D90049E418 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F192417E7D90049E418 /* AVFoundation.framework */; };
 		205B3F1C2417E7DD0049E418 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F1B2417E7DD0049E418 /* CoreMedia.framework */; };
@@ -34,7 +33,6 @@
 		20335697241668E500F628E8 /* Input.xcfilelist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcfilelist; path = Input.xcfilelist; sourceTree = "<group>"; };
 		20335698241668E500F628E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2043B51C2488240200FF8AD8 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
-		2043B51E2488240E00FF8AD8 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		2043B527248829FF00FF8AD8 /* Sample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sample.entitlements; sourceTree = "<group>"; };
 		205B3F172417E7CB0049E418 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		205B3F192417E7D90049E418 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -55,7 +53,6 @@
 				205B3F1A2417E7D90049E418 /* AVFoundation.framework in Frameworks */,
 				205B3F1C2417E7DD0049E418 /* CoreMedia.framework in Frameworks */,
 				2043B51D2488240200FF8AD8 /* CoreNFC.framework in Frameworks */,
-				2043B51F2488240E00FF8AD8 /* ExternalAccessory.framework in Frameworks */,
 				205B3F222417E7FF0049E418 /* libz.tbd in Frameworks */,
 				205B3F202417E7F20049E418 /* libiconv.tbd in Frameworks */,
 				205B3F1E2417E7E80049E418 /* libc++.tbd in Frameworks */,
@@ -105,7 +102,6 @@
 				205B3F192417E7D90049E418 /* AVFoundation.framework */,
 				205B3F1B2417E7DD0049E418 /* CoreMedia.framework */,
 				2043B51C2488240200FF8AD8 /* CoreNFC.framework */,
-				2043B51E2488240E00FF8AD8 /* ExternalAccessory.framework */,
 				205B3F1D2417E7E80049E418 /* libc++.tbd */,
 				205B3F1F2417E7F20049E418 /* libiconv.tbd */,
 				205B3F212417E7FF0049E418 /* libz.tbd */,
