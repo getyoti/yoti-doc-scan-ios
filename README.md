@@ -53,7 +53,6 @@ If `YotiSDKDocument` is specified as part of your dependencies, then add the fol
 - `AVFoundation.framework`
 - `CoreMedia.framework`
 - `CoreNFC.framework`
-- `ExternalAccessory.framework`
 - `libc++.tbd`
 - `libiconv.tbd`
 - `libz.tbd`
