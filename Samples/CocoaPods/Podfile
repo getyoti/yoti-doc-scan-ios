@@ -1,6 +1,7 @@
 platform :ios, '11.4'
 
 target 'Sample' do
+  use_frameworks!
   pod 'YotiSDKDocument'
   pod 'YotiSDKZoom'
 end
