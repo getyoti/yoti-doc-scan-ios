@@ -70,7 +70,7 @@ import YotiSDKDocument  // Optional. Include to capture and verify an identity d
 import YotiSDKZoom      // Optional. Include to perform a face scan.
 ```
 
-### 2. Launching the SDK
+### 2. Launch the SDK
 Initialize and present the `YotiSDKNavigationController`:
 ```swift
 let navigationController = YotiSDKNavigationController()
@@ -84,7 +84,7 @@ navigationController.sdkDelegate = self
 present(navigationController, animated: true, completion: nil)
 ```
 
-### 3. Specifying the session and its supported module types
+### 3. Specify the session and its supported module types
 Conform to `YotiSDKDataSource`:
 ```swift
 func sessionID(for navigationController: YotiSDKNavigationController) -> String {
@@ -100,7 +100,7 @@ func supportedModuleTypes(for navigationController: YotiSDKNavigationController)
 }
 ```
 
-### 4. UI customizations and handling the verification result
+### 4. Customize the UI and and handle the verification result
 Conform to `YotiSDKDelegate`:
 ```swift
 // Optional.
@@ -122,7 +122,13 @@ func navigationController(_ navigationController: YotiSDKNavigationController, d
 }
 ```
 
-**Note**: To use our SDK, it's required to add [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) to your `Info.plist`. If `YotiSDKDocument` is specified as part of your dependencies, then you should also add [`NFCReaderUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nfcreaderusagedescription) and include [`A0000002471001`](https://www.icao.int/publications/Documents/9303_p10_cons_en.pdf) under [`com.apple.developer.nfc.readersession.iso7816.select-identifiers`](https://developer.apple.com/documentation/bundleresources/information_property_list/select-identifiers) as well as turning on [`Near Field Communication Tag Reading`](https://developer.apple.com/documentation/corenfc/building_an_nfc_tag-reader_app) under the Signing & Capabilities tab for your project’s target.
+### 5. Modify the properties and capabilities of your project's target
+Add [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) to your `Info.plist`.
+
+If `YotiSDKDocument` is specified as part of your dependencies, then you should also:
+- Add [`NFCReaderUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nfcreaderusagedescription) to your `Info.plist`
+- Add [`com.apple.developer.nfc.readersession.iso7816.select-identifiers`](https://developer.apple.com/documentation/bundleresources/information_property_list/select-identifiers) to your `Info.plist` and include [`A0000002471001`](https://www.icao.int/publications/Documents/9303_p10_cons_en.pdf) as an application identifier for your app to support
+- Turn on [`Near Field Communication Tag Reading`](https://developer.apple.com/documentation/corenfc/building_an_nfc_tag-reader_app) under the Signing & Capabilities tab for your project’s target
 
 ## Error Handling
 Please refer to the following table of error codes that may be returned as part of a failed verification.
