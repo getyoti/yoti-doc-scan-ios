@@ -8,8 +8,8 @@ Integrating with our SDK allows a user of your app to take a photo of their ID, 
 In order to integrate with our SDK, a working infrastructure is needed (see [developers.yoti.com](https://developers.yoti.com/yoti-doc-scan/yoti-doc-scan-integration-introduction) for more details).
 
 ## Requirements
-- iOS 11.4+
-- Swift 5.2+
+- iOS 12+
+- Swift 5.3+
 
 ## Installation
 Make sure you've installed and are running the latest version of:
