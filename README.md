@@ -9,7 +9,7 @@ In order to integrate with our SDK, a working infrastructure is needed (see [dev
 
 ## Requirements
 - iOS 11.4+
-- Swift 5.2+
+- Swift 5.3+
 
 ## Installation
 Make sure you've installed and are running the latest version of:
