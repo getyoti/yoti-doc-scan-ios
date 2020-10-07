@@ -9,4 +9,4 @@ binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiDocumentCapture.json"
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKZoom.json"
 github "BlinkID/blinkid-ios" "v5.3.0"
-github "apple/swift-protobuf" "1.10.2"
+github "apple/swift-protobuf" "1.12.0"
