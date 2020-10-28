@@ -2,13 +2,13 @@
 
 ![Illustration](./Illustration.png)
 
-Integrating with our SDK allows a user of your app to take a photo of their ID, as well as to scan their face, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.
+Integrating with our SDK allows a user of your app to take a photo of their document, as well as to scan their face, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.
 
 ## Prerequisites
 In order to integrate with our SDK, a working infrastructure is needed (see [developers.yoti.com](https://developers.yoti.com/yoti-doc-scan/yoti-doc-scan-integration-introduction) for more details).
 
 ## Requirements
-- iOS 11.4+
+- iOS 11.0+
 - Swift 5.3+
 
 ## Installation
@@ -20,7 +20,7 @@ Make sure you've installed and are running the latest version of:
 ### CocoaPods
 Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html) and run `pod install` from its directory:
 ```bash
-platform :ios, '11.4'
+platform :ios, '12.0'
 
 target 'TargetName' do
   use_frameworks!
@@ -28,7 +28,7 @@ target 'TargetName' do
   pod 'YotiSDKZoom'
 end
 ```
-**Note**: If you wish to support only capturing and verifying an identity document, then add only `YotiSDKDocument`. If you wish to support only performing a face scan, then add only `YotiSDKZoom`.
+**Note**: If you wish to support only capturing and verifying a document, then add only `YotiSDKDocument`. If you wish to support only performing a face scan, then add only `YotiSDKZoom`.
 
 ### Carthage
 #### 1. Choose or configure necessary files
@@ -66,7 +66,7 @@ Import the frameworks needed for your implementation:
 ```swift
 import YotiSDKCommon
 import YotiSDKCore
-import YotiSDKDocument  // Optional. Include to capture and verify an identity document.
+import YotiSDKDocument  // Optional. Include to capture and verify a document.
 import YotiSDKZoom      // Optional. Include to perform a face scan.
 ```
 
