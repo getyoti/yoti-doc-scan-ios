@@ -20,7 +20,7 @@ Make sure you've installed and are running the latest version of:
 ### CocoaPods
 Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html) and run `pod install` from its directory:
 ```bash
-platform :ios, '12.0'
+platform :ios, '11.0'
 
 target 'TargetName' do
   use_frameworks!
