@@ -58,8 +58,6 @@ If `YotiSDKDocument` is specified as part of your dependencies, then add the fol
 - `libiconv.tbd`
 - `libz.tbd`
 
-In addition, the `Microblink.bundle` should be added at `Build Phases` → `Copy Bundle Resources`
-
 ## Integration
 ### 1. Import frameworks
 Import the frameworks needed for your implementation:

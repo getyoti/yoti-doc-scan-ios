@@ -7,5 +7,5 @@ binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKCore.json"
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKDocument.json"
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiDocumentCapture.json"
-github "BlinkID/blinkid-ios" "v5.3.0"
+github "BlinkID/blinkid-ios" "v5.8.0"
 github "apple/swift-protobuf" "1.12.0"
