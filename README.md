@@ -150,7 +150,7 @@ Code | Description | Retry possible (same session)
 5006 | An unexpected liveness capture error occurred | No
 
 ## Support
-If you have any other questions please do not hesitate to contact sdksupport@yoti.com.
+If you have any other questions please do not hesitate to contact clientsupport@yoti.com.
 Once we have answered your question we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
 
 ## Licence
