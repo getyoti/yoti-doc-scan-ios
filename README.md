@@ -8,7 +8,7 @@ Integrating with our SDK allows a user of your app to take a photo of their docu
 In order to integrate with our SDK, a working infrastructure is needed (see [developers.yoti.com](https://developers.yoti.com/yoti-doc-scan/yoti-doc-scan-integration-introduction) for more details).
 
 ## Requirements
-- iOS 11.0+
+- iOS 12.0+
 - Swift 5.3+
 
 ## Installation
@@ -20,7 +20,7 @@ Make sure you've installed and are running the latest version of:
 ### CocoaPods
 Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html) and run `pod install` from its directory:
 ```bash
-platform :ios, '11.0'
+platform :ios, '12.0'
 
 target 'TargetName' do
   use_frameworks!
