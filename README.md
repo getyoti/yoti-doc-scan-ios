@@ -130,6 +130,7 @@ If `YotiSDKDocument` is specified as part of your dependencies, then you should 
 
 ## Error Handling
 Please refer to the following table of error codes that may be returned as part of a failed verification.
+
 Code | Description | Retry possible (same session)
 :-- | :-- | :--
 1000 | No error occurred. The user cancelled the session | Yes
