@@ -25,10 +25,10 @@ platform :ios, '12.0'
 target 'TargetName' do
   use_frameworks!
   pod 'YotiSDKDocument'
-  pod 'YotiSDKZoom'
+  pod 'YotiSDKZoom' // or 'YotiSDKFace'
 end
 ```
-**Note**: If you wish to support only capturing and verifying a document, then add only `YotiSDKDocument`. If you wish to support only performing a face scan, then add only `YotiSDKZoom`.
+**Note**: If you wish to support only capturing and verifying a document, then add only `YotiSDKDocument`. If you wish to support only performing a face scan, then add only `YotiSDKZoom` or `YotiSDKFace`.
 
 ### Carthage
 #### 1. Choose or configure necessary files
