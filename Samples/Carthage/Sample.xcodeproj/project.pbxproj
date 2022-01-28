@@ -12,7 +12,7 @@
 		2033569B241668E500F628E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20335690241668E500F628E8 /* AppDelegate.swift */; };
 		2033569C241668E500F628E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20335692241668E500F628E8 /* LaunchScreen.storyboard */; };
 		2033569D241668E500F628E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20335694241668E500F628E8 /* Main.storyboard */; };
-		2043B51D2488240200FF8AD8 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2043B51C2488240200FF8AD8 /* CoreNFC.framework */; };
+		2043B51D2488240200FF8AD8 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2043B51C2488240200FF8AD8 /* CoreNFC.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		205B3F182417E7CB0049E418 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F172417E7CB0049E418 /* AudioToolbox.framework */; };
 		205B3F1A2417E7D90049E418 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F192417E7D90049E418 /* AVFoundation.framework */; };
 		205B3F1C2417E7DD0049E418 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F1B2417E7DD0049E418 /* CoreMedia.framework */; };
