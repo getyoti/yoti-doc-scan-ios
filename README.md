@@ -11,6 +11,8 @@ In order to integrate with our SDK, a working infrastructure is needed (see [dev
 - iOS 12.0+
 - Swift 5.3+
 
+**Important**: To use the latest version of our SDK, you must set `ENABLE_BITCODE` to `NO` within the build settings of your project's target. This is intended as a temporary workaround, and we're working to support bitcode in the next major release. If you'd rather keep bitcode enabled, please use [`v2.7.1`](https://github.com/getyoti/yoti-doc-scan-ios/releases/v2.7.1) for the time being.
+
 ## Installation
 Make sure you've installed and are running the latest version of:
 - [Git LFS](https://git-lfs.github.com)
