@@ -39,14 +39,14 @@ binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKCommon.json"
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKDesign.json"
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKCore.json"
-binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiDocumentCapture.json"             // Optional
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiDocumentCapture.json"             // To be included only if `YotiSDKDocument` is added
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKDocument.json"                 // Optional
-binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFace.json"                     // Optional
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFace.json"                     // To be included only if `YotiSDKFaceTec` or `YotiSDKFaceCapture` is added
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFaceTec.json"                  // Optional
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFaceCapture.json"              // Optional
-binary "https://raw.githubusercontent.com/getyoti/yoti-face-capture-ios/master/Specs/Carthage/YotiFaceCapture.json" == 4.0.0    // Optional
-github "BlinkID/blinkid-ios" "v5.14.0"                                                                                          // Optional
-github "apple/swift-protobuf" "1.19.0"                                                                                          // Optional
+binary "https://raw.githubusercontent.com/getyoti/yoti-face-capture-ios/master/Specs/Carthage/YotiFaceCapture.json" == 4.0.0    // To be included only if `YotiSDKFaceCapture` is added
+github "BlinkID/blinkid-ios" "v5.14.0"                                                                                          // To be included only if `YotiSDKDocument` is added
+github "apple/swift-protobuf" "1.19.0"                                                                                          // To be included only if `YotiSDKDocument` is added.
 ```
 
 #### 2. Build dependencies
@@ -97,7 +97,11 @@ func sessionToken(for navigationController: YotiSDKNavigationController) -> Stri
 }
 
 func supportedModuleTypes(for navigationController: YotiSDKNavigationController) -> [YotiSDKModule.Type] {
-    [YotiSDKDocumentModule.self, YotiSDKFaceTecModule.self, YotiSDKFaceCaptureModule.self]
+    [
+        YotiSDKDocumentModule.self,     // Optional
+        YotiSDKFaceTecModule.self,      // Optional
+        YotiSDKFaceCaptureModule.self   // Optional
+    ]
 }
 ```
 
