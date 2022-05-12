@@ -8,47 +8,52 @@ Integrating with our SDK allows a user of your app to take a photo of their docu
 In order to integrate with our SDK, a working infrastructure is needed (see [developers.yoti.com](https://developers.yoti.com/yoti-doc-scan/yoti-doc-scan-integration-introduction) for more details).
 
 ## Requirements
-- iOS 12.0+
+- iOS 13.0+
 - Swift 5.3+
-
-**Important**: To use the latest version of our SDK, you must set `ENABLE_BITCODE` to `NO` within the build settings of your project's target. This is intended as a temporary workaround, and we're working to support bitcode in the next major release. If you'd rather keep bitcode enabled, please use [`v2.7.1`](https://github.com/getyoti/yoti-doc-scan-ios/releases/v2.7.1) for the time being.
 
 ## Installation
 Make sure you've installed and are running the latest version of:
-- [Git LFS](https://git-lfs.github.com)
 - [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) (Optional)
 - [Carthage](https://github.com/Carthage/Carthage) (Optional)
 
 ### CocoaPods
 Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html) and run `pod install` from its directory:
 ```bash
-platform :ios, '12.0'
+platform :ios, '13.0'
 
 target 'TargetName' do
   use_frameworks!
-  pod 'YotiSDKDocument'
-  pod 'YotiSDKZoom' // or 'YotiSDKFace'
+  pod 'YotiSDKDocument'     // Optional
+  pod 'YotiSDKFaceTec'      // Optional
+  pod 'YotiSDKFaceCapture'  // Optional
 end
 ```
-**Note**: If you wish to support only capturing and verifying a document, then add only `YotiSDKDocument`. If you wish to support only performing a face scan, then add only `YotiSDKZoom` or `YotiSDKFace`.
 
 ### Carthage
-#### 1. Choose or configure necessary files
-Please refer to the [Installation](Installation/Carthage) folder of this repository, and locate the [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile), `Input.xcfilelist` and `Output.xcfilelist` that matches the combination of capabilities that you wish to support.
+#### 1. Configure your [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile)
+```bash
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiFoundation.json"
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiNetwork.json"
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKNetwork.json"
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiCommon.json"
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKCommon.json"
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKDesign.json"
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKCore.json"
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiDocumentCapture.json"             // Optional
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKDocument.json"                 // Optional
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFace.json"                     // Optional
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFaceTec.json"                  // Optional
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFaceCapture.json"              // Optional
+binary "https://raw.githubusercontent.com/getyoti/yoti-face-capture-ios/master/Specs/Carthage/YotiFaceCapture.json" == 4.0.0    // Optional
+github "BlinkID/blinkid-ios" "v5.14.0"                                                                                          // Optional
+github "apple/swift-protobuf" "1.19.0"                                                                                          // Optional
+```
 
 #### 2. Build dependencies
-Run `carthage bootstrap` from the root of your project directory, in which its `Cartfile` should also be located.
+Run `carthage bootstrap` from the root of your project directory, in which the `Cartfile` should also be located.
 
-#### 3. Copy frameworks
-On your application targets' `Build Phases` tab:
-- Click `+` icon and choose `New Run Script Phase`
-- Create a script with a shell of your choice (e.g. `/bin/sh`)
-- Add the following to the script area below the shell:
-```bash
-/usr/local/bin/carthage copy-frameworks
-```
-- Add the `Input.xcfilelist` to the `Input File Lists` section of the script
-- Add the `Output.xcfilelist` to the `Output File Lists` section of the script
+#### 3. Embed frameworks
+...
 
 #### 4. Link with libraries and add resources (Optional)
 If `YotiSDKDocument` is specified as part of your dependencies, then add the following libraries at `Build Phases` → `Link Binary With Libraries`:
@@ -66,21 +71,17 @@ Import the frameworks needed for your implementation:
 ```swift
 import YotiSDKCommon
 import YotiSDKCore
-import YotiSDKDocument  // Optional. Include to capture and verify a document.
-import YotiSDKZoom      // Optional. Include to perform a face scan.
+import YotiSDKDocument      // Optional
+import YotiSDKFaceTec       // Optional
+import YotiSDKFaceCapture   // Optional
 ```
 
 ### 2. Launch the SDK
 Initialize and present the `YotiSDKNavigationController`:
 ```swift
 let navigationController = YotiSDKNavigationController()
-
-// To specify the session and its supported module types.
 navigationController.sdkDataSource = self
-
-// To perform UI customizations and to handle the verification result.
 navigationController.sdkDelegate = self
-
 present(navigationController, animated: true, completion: nil)
 ```
 
@@ -96,7 +97,7 @@ func sessionToken(for navigationController: YotiSDKNavigationController) -> Stri
 }
 
 func supportedModuleTypes(for navigationController: YotiSDKNavigationController) -> [YotiSDKModule.Type] {
-    [YotiSDKDocument.self, YotiSDKZoom.self] // Return only the module types you wish to support.
+    [YotiSDKDocumentModule.self, YotiSDKFaceTecModule.self, YotiSDKFaceCaptureModule.self]
 }
 ```
 
@@ -153,8 +154,7 @@ Code | Description | Retry possible (same session)
 5006 | An unexpected liveness capture error occurred | No
 
 ## Support
-If you have any other questions please do not hesitate to contact clientsupport@yoti.com.
-Once we have answered your question we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
+If you have any other questions please do not hesitate to contact clientsupport@yoti.com. Once we have answered your question we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
 
 ## Licence
-Please find the licence for the SDK [here](https://www.yoti.com/wp-content/uploads/2019/08/Yoti-Doc-Scan-SDK-Terms.pdf).
+Please find the licence for the SDK [here](https://www.yoti.com/terms/identity-verification).
