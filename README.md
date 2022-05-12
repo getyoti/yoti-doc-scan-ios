@@ -2,7 +2,7 @@
 
 ![Illustration](./Illustration.png)
 
-Integrating with our SDK allows a user of your app to take a photo of their document, as well as to scan their face, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.
+Integrating with our SDK allows a user of your app to take a photo of their document, as well as to scan or capture their face, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.
 
 ## Prerequisites
 In order to integrate with our SDK, a working infrastructure is needed (see [developers.yoti.com](https://developers.yoti.com/yoti-doc-scan/yoti-doc-scan-integration-introduction) for more details).
