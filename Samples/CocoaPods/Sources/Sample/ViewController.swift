@@ -6,7 +6,7 @@ import UIKit
 import YotiSDKCommon
 import YotiSDKCore
 import YotiSDKDocument
-import YotiSDKZoom
+import YotiSDKFaceTec
 
 final class ViewController: UIViewController {
     @IBOutlet private weak var yotiSDKButton: UIButton!
@@ -40,7 +40,7 @@ extension ViewController: YotiSDKDataSource {
     }
 
     func supportedModuleTypes(for navigationController: YotiSDKNavigationController) -> [YotiSDKModule.Type] {
-        [YotiSDKDocument.self, YotiSDKZoom.self]
+        [YotiSDKDocumentModule.self, YotiSDKFaceTecModule.self]
     }
 }
 
