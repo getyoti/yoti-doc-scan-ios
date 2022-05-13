@@ -30,7 +30,8 @@ end
 ```
 
 ### Carthage
-#### 1. Configure your [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile)
+#### 1. Configure and build your dependencies
+Add the following to your [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) and run `carthage bootstrap` from its directory:
 ```bash
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiFoundation.json"
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiNetwork.json"
@@ -48,9 +49,6 @@ binary "https://raw.githubusercontent.com/getyoti/yoti-face-capture-ios/master/S
 github "BlinkID/blinkid-ios" "v5.14.0"                                                                                          // Include only if `YotiSDKDocument` is added
 github "apple/swift-protobuf" "1.19.0"                                                                                          // Include only if `YotiSDKDocument` is added
 ```
-
-#### 2. Build dependencies
-Run `carthage bootstrap` from the root of your project directory, in which the `Cartfile` should also be located.
 
 #### 3. Embed frameworks
 ...
