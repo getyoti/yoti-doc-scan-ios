@@ -51,7 +51,7 @@ github "apple/swift-protobuf" "1.19.0"                                          
 ```
 
 #### 3. Embed frameworks
-...
+Locate your fetched dependencies at `$(PROJECT_DIR)/Carthage/Build/**`, and add them to `General` → `Frameworks, Libraries and Embedded Content`. Ensure to `Embed & Sign` all of these dependencies, and to point your target's `FRAMEWORK_SEARCH_PATHS` to their directory.
 
 #### 4. Link with libraries and add resources (Optional)
 If `YotiSDKDocument` is specified as part of your dependencies, then add the following libraries at `Build Phases` → `Link Binary With Libraries`:
