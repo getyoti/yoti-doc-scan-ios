@@ -27,8 +27,6 @@
 		20335690241668E500F628E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20335693241668E500F628E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20335695241668E500F628E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		20335696241668E500F628E8 /* Output.xcfilelist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcfilelist; path = Output.xcfilelist; sourceTree = "<group>"; };
-		20335697241668E500F628E8 /* Input.xcfilelist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcfilelist; path = Input.xcfilelist; sourceTree = "<group>"; };
 		20335698241668E500F628E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2043B51C2488240200FF8AD8 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
 		2043B527248829FF00FF8AD8 /* Sample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Sample.entitlements; sourceTree = "<group>"; };
@@ -84,8 +82,6 @@
 				2043B527248829FF00FF8AD8 /* Sample.entitlements */,
 				20335698241668E500F628E8 /* Info.plist */,
 				2033568F241668E500F628E8 /* Assets.xcassets */,
-				20335697241668E500F628E8 /* Input.xcfilelist */,
-				20335696241668E500F628E8 /* Output.xcfilelist */,
 				20335692241668E500F628E8 /* LaunchScreen.storyboard */,
 				20335694241668E500F628E8 /* Main.storyboard */,
 			);
@@ -297,7 +293,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@loader_path/Frameworks",
 					"@executable_path/Frameworks",
@@ -328,9 +324,9 @@
 				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Sample/SupportingFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 2.8.0;
+				MARKETING_VERSION = 3.0.0;
 				OTHER_CFLAGS = "";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.yds.Sample;
@@ -393,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@loader_path/Frameworks",
 					"@executable_path/Frameworks",
@@ -424,9 +420,9 @@
 				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Sample/SupportingFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 2.8.0;
+				MARKETING_VERSION = 3.0.0;
 				OTHER_CFLAGS = "";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.yds.Sample;
