@@ -136,24 +136,28 @@ If `YotiSDKDocument` is specified as part of your dependencies, then you should 
 ## Error Handling
 Please refer to the following table of error codes that may be returned as part of a failed verification.
 
-Code | Description | Retry possible (same session)
-:-- | :-- | :--
-1000 | No error occurred. The user cancelled the session | Yes
-2000 | Unauthorised request (wrong or expired session token) | Yes
-2001 | Session not found | Yes
-2002 | Session expired | Yes
-2003 | SDK launched without session Token | Yes
-2004 | SDK launched without session ID | Yes
-3000 | Yoti's services are down or unable to process the request | Yes
-3001 | An error occurred during a network request | Yes
-3002 | User has no network | Yes
-4000 | The user did not grant permission to the camera | Yes
-5000 | The user's camera was not found and file upload is not allowed | No
-5002 | No more local tries for the liveness flow | Yes
-5003 | SDK is out-of-date, please update the SDK to the latest version | No
-5004 | An unexpected internal error occurred | No
-5005 | An unexpected document capture error occurred | No
-5006 | An unexpected liveness capture error occurred | No
+Code | Description
+:-- | :--
+1000 | No error occurred. The user cancelled the session
+2000 | Unauthorised request (wrong or expired session token)
+2001 | Session not found
+2002 | Session expired
+2003 | SDK launched without session Token
+2004 | SDK launched without session ID
+3000 | Yoti's services are down or unable to process the request
+3001 | An error occurred during a network request
+3002 | User has no network
+4000 | The user did not grant permission to the camera
+4001 | The user submitted a wrong document
+5000 | The user's camera was not found and file upload is not allowed
+5002 | No more local tries for the liveness flow
+5003 | SDK is out-of-date, please update the SDK to the latest version
+5004 | An unexpected internal error occurred
+5005 | An unexpected document capture error occurred
+5006 | An unexpected liveness capture error occurred
+6000 | The document dependency could not be found
+6001 | The face scan dependency could not be found
+6003 | The face capture dependency could not be found
 
 ## Support
 If you have any other questions please do not hesitate to contact clientsupport@yoti.com. Once we have answered your question we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
