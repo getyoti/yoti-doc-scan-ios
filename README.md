@@ -31,7 +31,7 @@ end
 
 ### Carthage
 #### 1. Configure and build your dependencies
-Add the following to your [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) and run `carthage bootstrap` from its directory:
+Add the following to your [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) and run `carthage bootstrap --use-xcframeworks` from its directory:
 ```bash
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiFoundation.json"
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiNetwork.json"
