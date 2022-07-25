@@ -403,7 +403,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Sample/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.0.1;
 				OTHER_CFLAGS = "";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.yds.Sample;
@@ -496,7 +496,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Sample/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = 3.0.1;
 				OTHER_CFLAGS = "";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.yds.Sample;
