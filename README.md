@@ -1,21 +1,17 @@
-# Yoti Doc Scan, iOS SDK
+# Yoti IDV, iOS SDK
 
 ![Illustration](./Illustration.png)
 
-Integrating with our SDK allows a user of your app to take a photo of their document, as well as to scan or capture their face, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.
+Our SDK allows a user of your app to take a photo of their document, as well as to scan or capture their face, we then verify this instantly and prepare a response, which your system can then retrieve on your hosted site.
 
 ## Prerequisites
-In order to integrate with our SDK, a working infrastructure is needed (see [developers.yoti.com](https://developers.yoti.com/yoti-doc-scan/yoti-doc-scan-integration-introduction) for more details).
+To integrate with our SDK, a working infrastructure is needed (see [developers.yoti.com](https://developers.yoti.com/identity-verification/overview) for more details).
 
 ## Requirements
 - iOS 13.0+
 - Swift 5.3+
 
-## Installation
-Make sure you've installed and are running the latest version of:
-- [CocoaPods](https://guides.cocoapods.org/using/getting-started.html) (Optional)
-- [Carthage](https://github.com/Carthage/Carthage) (Optional)
-
+## Integration
 ### CocoaPods
 Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html) and run `pod install` from its directory:
 ```bash
@@ -31,7 +27,7 @@ end
 
 ### Carthage
 #### 1. Configure and build your dependencies
-Add the following to your [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) and run `carthage bootstrap --use-xcframeworks` from its directory:
+Add the following to your [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) and run `carthage bootstrap --platform iOS --use-xcframeworks` from its directory:
 ```bash
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiFoundation.json"
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiNetwork.json"
@@ -45,15 +41,15 @@ binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFace.json"                     // Include only if `YotiSDKFaceTec` or `YotiSDKFaceCapture` is added
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFaceTec.json"                  // Optional
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFaceCapture.json"              // Optional
-binary "https://raw.githubusercontent.com/getyoti/yoti-face-capture-ios/master/Specs/Carthage/YotiFaceCapture.json" == 4.1.1    // Include only if `YotiSDKFaceCapture` is added
-github "BlinkID/blinkid-ios" "v5.14.0"                                                                                          // Include only if `YotiSDKDocument` is added
-github "apple/swift-protobuf" "1.19.0"                                                                                          // Include only if `YotiSDKDocument` is added
+binary "https://raw.githubusercontent.com/getyoti/yoti-face-capture-ios/master/Specs/Carthage/YotiFaceCapture.json" == 5.0.0    // Include only if `YotiSDKFaceCapture` is added
+binary "https://raw.githubusercontent.com/BlinkID/blinkid-ios/master/blinkid-ios.json" == 5.18.0                                // Include only if `YotiSDKDocument` is added
+github "apple/swift-protobuf" "1.20.3"                                                                                          // Include only if `YotiSDKDocument` is added
 ```
 
-#### 3. Embed frameworks
+#### 2. Embed frameworks
 Locate your fetched dependencies in `$(PROJECT_DIR)/Carthage/Build/**`, and add them to `General` → `Frameworks, Libraries and Embedded Content`. Ensure to `Embed & Sign` all of these dependencies, and to point your target's `FRAMEWORK_SEARCH_PATHS` to their directory.
 
-#### 4. Link with libraries and add resources (Optional)
+#### 3. Link with libraries and add resources (Optional)
 If `YotiSDKDocument` is specified as part of your dependencies, then add the following libraries at `Build Phases` → `Link Binary With Libraries`:
 - `AudioToolbox.framework`
 - `AVFoundation.framework`
@@ -63,7 +59,19 @@ If `YotiSDKDocument` is specified as part of your dependencies, then add the fol
 - `libiconv.tbd`
 - `libz.tbd`
 
-## Integration
+### Swift Package Manager
+Add the following line to your `Package.swift` file:
+```swift
+.package(url: "https://github.com/getyoti/yoti-doc-scan-ios.git", from: "1.0.0")
+```
+...or add our package in Xcode via `File -> Swift Packages -> Add Package Dependency...` using the URL of this repository.
+
+If `YotiSDKDocument` is included in your target, then you should also make sure to build and add [`SwiftProtobuf`](https://github.com/apple/swift-protobuf) as an `XCFramework` bundle to your target. E.g. by following the steps outlined for [Carthage](#carthage), but with only the following line added to your [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
+```bash
+github "apple/swift-protobuf" "1.20.3"
+```
+
+## Usage
 ### 1. Import frameworks
 Import the frameworks needed for your implementation:
 ```swift
@@ -87,11 +95,11 @@ present(navigationController, animated: true, completion: nil)
 Conform to `YotiSDKDataSource`:
 ```swift
 func sessionID(for navigationController: YotiSDKNavigationController) -> String {
-    "[Session ID]"
+    ""
 }
 
 func sessionToken(for navigationController: YotiSDKNavigationController) -> String {
-    "[Session token]"
+    ""
 }
 
 func supportedModuleTypes(for navigationController: YotiSDKNavigationController) -> [YotiSDKModule.Type] {
@@ -103,19 +111,11 @@ func supportedModuleTypes(for navigationController: YotiSDKNavigationController)
 }
 ```
 
-### 4. Customize the UI and and handle the verification result
+### 4. Handle the result
 Conform to `YotiSDKDelegate`:
 ```swift
-// Optional.
-func primaryColor(for navigationController: YotiSDKNavigationController) -> UIColor {
-    return .blue
-}
-
 func navigationController(_ navigationController: YotiSDKNavigationController, didFinishWithResult result: YotiSDKResult) {
-    // Dismiss the SDK.
     dismiss(animated: true)
-
-    // Handle the result from the SDK.
     switch result {
     case .success:
         break
@@ -128,14 +128,27 @@ func navigationController(_ navigationController: YotiSDKNavigationController, d
 ### 5. Modify the properties and capabilities of your project's target
 Add [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) to your `Info.plist`.
 
-If `YotiSDKDocument` is specified as part of your dependencies, then you should also:
+If `YotiSDKDocument` is included in your target, then you should also:
 - Add [`NFCReaderUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nfcreaderusagedescription) to your `Info.plist`
 - Add [`com.apple.developer.nfc.readersession.iso7816.select-identifiers`](https://developer.apple.com/documentation/bundleresources/information_property_list/select-identifiers) to your `Info.plist` and include [`A0000002471001`](https://www.icao.int/publications/Documents/9303_p10_cons_en.pdf) as an application identifier for your app to support
 - Turn on [`Near Field Communication Tag Reading`](https://developer.apple.com/documentation/corenfc/building_an_nfc_tag-reader_app) under the Signing & Capabilities tab for your project’s target
 
-## Error Handling
-Please refer to the following table of error codes that may be returned as part of a failed verification.
+## Supported languages
+Our SDK supports the 9 languages listed in the table below, but their use is driven by the localization configuration of your target. If your target only supports a subset of our SDK's supported languages, our SDK will fall back to English on the ones your target doesn't support.
 
+Language | Code
+:-- | :--
+Arabic | ar
+Dutch | nl
+English (default) | en
+French | fr
+German | de
+Italian | it
+Russian | ru
+Spanish | es
+Turkish | tr
+
+## Error codes
 Code | Description
 :-- | :--
 1000 | No error occurred. The user cancelled the session
@@ -146,7 +159,7 @@ Code | Description
 2004 | SDK launched without session ID
 3000 | Yoti's services are down or unable to process the request
 3001 | An error occurred during a network request
-3002 | User has no network
+3002 | The user did not have a network connection
 4000 | The user did not grant permission to the camera
 4001 | The user submitted a wrong document
 5000 | The user's camera was not found and file upload is not allowed
@@ -155,12 +168,14 @@ Code | Description
 5004 | An unexpected internal error occurred
 5005 | An unexpected document capture error occurred
 5006 | An unexpected liveness capture error occurred
+5008 | An unsupported configuration was used
 6000 | The document dependency could not be found
 6001 | The face scan dependency could not be found
 6003 | The face capture dependency could not be found
+7000 | The user did not have the required documents
 
 ## Support
-If you have any other questions please do not hesitate to contact clientsupport@yoti.com. Once we have answered your question we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
+If you have any questions, please do not hesitate to contact clientsupport@yoti.com. Once we have answered your question, we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
 
 ## Licence
-Please find the licence for the SDK [here](https://www.yoti.com/terms/identity-verification).
+See the licence for our SDK [here](https://www.yoti.com/terms/identity-verification).
