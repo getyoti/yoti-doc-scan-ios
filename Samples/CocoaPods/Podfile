@@ -1,7 +1,0 @@
-platform :ios, '13.0'
-
-target 'Sample' do
-  use_frameworks!
-  pod 'YotiSDKDocument'
-  pod 'YotiSDKFaceTec'
-end
