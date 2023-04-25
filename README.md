@@ -15,7 +15,7 @@ To integrate with our SDK, a working infrastructure is needed (see [developers.y
 ### CocoaPods
 Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html) and run `pod install` from its directory:
 ```bash
-platform :ios
+platform :ios, '13.0'
 
 target 'TargetName' do
   use_frameworks!
