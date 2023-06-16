@@ -3,44 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		201BED0E299FA74B00EB820C /* YotiSDKDocument in Frameworks */ = {isa = PBXBuildFile; productRef = 201BED0D299FA74B00EB820C /* YotiSDKDocument */; };
-		201BED10299FA74B00EB820C /* YotiSDKFaceTec in Frameworks */ = {isa = PBXBuildFile; productRef = 201BED0F299FA74B00EB820C /* YotiSDKFaceTec */; };
-		201FF7CE282E9B070094E2E4 /* SwiftProtobuf.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 201FF7B8282E9B050094E2E4 /* SwiftProtobuf.xcframework */; };
-		201FF7CF282E9B070094E2E4 /* SwiftProtobuf.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 201FF7B8282E9B050094E2E4 /* SwiftProtobuf.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20335699241668E500F628E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2033568D241668E500F628E8 /* ViewController.swift */; };
 		2033569B241668E500F628E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20335690241668E500F628E8 /* AppDelegate.swift */; };
 		2033569C241668E500F628E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20335692241668E500F628E8 /* LaunchScreen.storyboard */; };
 		2033569D241668E500F628E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20335694241668E500F628E8 /* Main.storyboard */; };
 		2043B51D2488240200FF8AD8 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2043B51C2488240200FF8AD8 /* CoreNFC.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		205B3F182417E7CB0049E418 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F172417E7CB0049E418 /* AudioToolbox.framework */; };
 		205B3F1A2417E7D90049E418 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F192417E7D90049E418 /* AVFoundation.framework */; };
 		205B3F1C2417E7DD0049E418 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F1B2417E7DD0049E418 /* CoreMedia.framework */; };
 		205B3F1E2417E7E80049E418 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F1D2417E7E80049E418 /* libc++.tbd */; };
 		205B3F202417E7F20049E418 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F1F2417E7F20049E418 /* libiconv.tbd */; };
 		205B3F222417E7FF0049E418 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F212417E7FF0049E418 /* libz.tbd */; };
+		20EF3DE72A7A934B0083CD1F /* YotiSDKFaceTec in Frameworks */ = {isa = PBXBuildFile; productRef = 20EF3DE62A7A934B0083CD1F /* YotiSDKFaceTec */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		201FF7DE282E9B090094E2E4 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				201FF7CF282E9B070094E2E4 /* SwiftProtobuf.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		201BED0A299F9D0E00EB820C /* Cartfile.resolved */ = {isa = PBXFileReference; lastKnownFileType = text; path = Cartfile.resolved; sourceTree = "<group>"; };
-		201FF7B8282E9B050094E2E4 /* SwiftProtobuf.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SwiftProtobuf.xcframework; path = Carthage/Build/SwiftProtobuf.xcframework; sourceTree = "<group>"; };
 		2033568D241668E500F628E8 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		20335690241668E500F628E8 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20335693241668E500F628E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -48,13 +28,11 @@
 		20335698241668E500F628E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2043B51C2488240200FF8AD8 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
 		2043B527248829FF00FF8AD8 /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo.entitlements; sourceTree = "<group>"; };
-		205B3F172417E7CB0049E418 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		205B3F192417E7D90049E418 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		205B3F1B2417E7DD0049E418 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		205B3F1D2417E7E80049E418 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
 		205B3F1F2417E7F20049E418 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
 		205B3F212417E7FF0049E418 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		20ABE58C2422536E00E5A97E /* Cartfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Cartfile; sourceTree = "<group>"; };
 		20C98D0C299E3097004061FC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		20C98D0D299E309E004061FC /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
 		20C98D0E299E30A9004061FC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
@@ -72,16 +50,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				205B3F182417E7CB0049E418 /* AudioToolbox.framework in Frameworks */,
 				205B3F1A2417E7D90049E418 /* AVFoundation.framework in Frameworks */,
 				205B3F1C2417E7DD0049E418 /* CoreMedia.framework in Frameworks */,
 				2043B51D2488240200FF8AD8 /* CoreNFC.framework in Frameworks */,
 				205B3F1E2417E7E80049E418 /* libc++.tbd in Frameworks */,
 				205B3F202417E7F20049E418 /* libiconv.tbd in Frameworks */,
+				20EF3DE72A7A934B0083CD1F /* YotiSDKFaceTec in Frameworks */,
 				205B3F222417E7FF0049E418 /* libz.tbd in Frameworks */,
-				201FF7CE282E9B070094E2E4 /* SwiftProtobuf.xcframework in Frameworks */,
-				201BED10299FA74B00EB820C /* YotiSDKFaceTec in Frameworks */,
-				201BED0E299FA74B00EB820C /* YotiSDKDocument in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,14 +95,12 @@
 		205B3F162417E7CB0049E418 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				205B3F172417E7CB0049E418 /* AudioToolbox.framework */,
 				205B3F192417E7D90049E418 /* AVFoundation.framework */,
 				205B3F1B2417E7DD0049E418 /* CoreMedia.framework */,
 				2043B51C2488240200FF8AD8 /* CoreNFC.framework */,
 				205B3F1D2417E7E80049E418 /* libc++.tbd */,
 				205B3F1F2417E7F20049E418 /* libiconv.tbd */,
 				205B3F212417E7FF0049E418 /* libz.tbd */,
-				201FF7B8282E9B050094E2E4 /* SwiftProtobuf.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -135,8 +108,6 @@
 		5F95E254221B1333007B6035 = {
 			isa = PBXGroup;
 			children = (
-				20ABE58C2422536E00E5A97E /* Cartfile */,
-				201BED0A299F9D0E00EB820C /* Cartfile.resolved */,
 				205B3F162417E7CB0049E418 /* Frameworks */,
 				5F95E25E221B1333007B6035 /* Products */,
 				2033568B241668E500F628E8 /* Sources */,
@@ -161,7 +132,6 @@
 				5F95E259221B1333007B6035 /* Sources */,
 				205B3F152417E7BC0049E418 /* Frameworks */,
 				5F95E25B221B1333007B6035 /* Resources */,
-				201FF7DE282E9B090094E2E4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -169,8 +139,7 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				201BED0D299FA74B00EB820C /* YotiSDKDocument */,
-				201BED0F299FA74B00EB820C /* YotiSDKFaceTec */,
+				20EF3DE62A7A934B0083CD1F /* YotiSDKFaceTec */,
 			);
 			productName = Sample;
 			productReference = 5F95E25D221B1333007B6035 /* Demo.app */;
@@ -182,8 +151,9 @@
 		5F95E255221B1333007B6035 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1130;
+				LastUpgradeCheck = 1430;
 				ORGANIZATIONNAME = "Yoti Ltd";
 				TargetAttributes = {
 					5F95E25C221B1333007B6035 = {
@@ -301,6 +271,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -312,7 +283,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/**";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = z;
@@ -346,7 +316,6 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Sources/Demo/SupportingFiles/Demo.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6VUTP72GG4;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -355,7 +324,6 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Demo/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 3.1.2;
 				OTHER_CFLAGS = "";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.yds.demo;
@@ -394,6 +362,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -406,7 +375,6 @@
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/**";
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -440,7 +408,6 @@
 				CODE_SIGN_ENTITLEMENTS = "$(SRCROOT)/Sources/Demo/SupportingFiles/Demo.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6VUTP72GG4;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -449,7 +416,6 @@
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Demo/SupportingFiles/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
-				MARKETING_VERSION = 3.1.2;
 				OTHER_CFLAGS = "";
 				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yoti.mobile.ios.sdk.yds.demo;
@@ -496,12 +462,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		201BED0D299FA74B00EB820C /* YotiSDKDocument */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 201BED0C299FA74B00EB820C /* XCRemoteSwiftPackageReference "yoti-doc-scan-ios" */;
-			productName = YotiSDKDocument;
-		};
-		201BED0F299FA74B00EB820C /* YotiSDKFaceTec */ = {
+		20EF3DE62A7A934B0083CD1F /* YotiSDKFaceTec */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 201BED0C299FA74B00EB820C /* XCRemoteSwiftPackageReference "yoti-doc-scan-ios" */;
 			productName = YotiSDKFaceTec;

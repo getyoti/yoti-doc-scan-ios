@@ -1,7 +1,6 @@
 import UIKit
 import YotiSDKCommon
 import YotiSDKCore
-import YotiSDKDocument
 import YotiSDKFaceTec
 
 final class ViewController: UIViewController {
@@ -26,7 +25,7 @@ extension ViewController: YotiSDKDataSource {
     }
 
     func supportedModuleTypes(for navigationController: YotiSDKNavigationController) -> [YotiSDKModule.Type] {
-        [YotiSDKDocumentModule.self, YotiSDKFaceTecModule.self]
+        [YotiSDKFaceTecModule.self]
     }
 }
 
