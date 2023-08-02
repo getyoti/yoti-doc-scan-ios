@@ -19,9 +19,10 @@ platform :ios, '13.0'
 
 target 'TargetName' do
   use_frameworks!
-  pod 'YotiSDKDocument'     // Optional
-  pod 'YotiSDKFaceTec'      // Optional
-  pod 'YotiSDKFaceCapture'  // Optional
+  pod 'YotiSDKIdentityDocument'         // Optional
+  pod 'YotiSDKSupplementaryDocument'    // Optional
+  pod 'YotiSDKFaceTec'                  // Optional
+  pod 'YotiSDKFaceCapture'              // Optional
 end
 ```
 
@@ -29,29 +30,28 @@ end
 #### 1. Configure and build your dependencies
 Add the following to your [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) and run `carthage bootstrap --platform iOS --use-xcframeworks` from its directory:
 ```bash
-binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiFoundation.json"
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiNetwork.json"
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiDocumentCapture.json"             // Include only if `YotiSDKIdentityDocument` is added
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiNFC.json"                         // Include only if `YotiSDKIdentityDocument` is added
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKNetwork.json"
-binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiCommon.json"
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKCommon.json"
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKDesign.json"
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKCore.json"
-binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiDocumentCapture.json"             // Include only if `YotiSDKDocument` is added
-binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKDocument.json"                 // Optional
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKDocument.json"                 // Include only if `YotiSDKIdentityDocument` or `YotiSDKSupplementaryDocument` is added
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKIdentityDocument.json"         // Optional
+binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKSupplementaryDocument.json"    // Optional
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFace.json"                     // Include only if `YotiSDKFaceTec` or `YotiSDKFaceCapture` is added
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFaceTec.json"                  // Optional
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFaceCapture.json"              // Optional
 binary "https://raw.githubusercontent.com/getyoti/yoti-face-capture-ios/master/Specs/Carthage/YotiFaceCapture.json" == 5.0.0    // Include only if `YotiSDKFaceCapture` is added
-binary "https://raw.githubusercontent.com/BlinkID/blinkid-ios/master/blinkid-ios.json" == 5.18.0                                // Include only if `YotiSDKDocument` is added
-github "apple/swift-protobuf" "1.20.3"                                                                                          // Include only if `YotiSDKDocument` is added
+binary "https://raw.githubusercontent.com/BlinkID/blinkid-ios/master/blinkid-ios.json" == 5.18.0                                // Include only if `YotiSDKIdentityDocument` is added
 ```
 
 #### 2. Embed frameworks
 Locate your fetched dependencies in `$(PROJECT_DIR)/Carthage/Build/**`, and add them to `General` → `Frameworks, Libraries and Embedded Content`. Ensure to `Embed & Sign` all of these dependencies, and to point your target's `FRAMEWORK_SEARCH_PATHS` to their directory.
 
 #### 3. Link with libraries and add resources (Optional)
-If `YotiSDKDocument` is specified as part of your dependencies, then add the following libraries at `Build Phases` → `Link Binary With Libraries`:
-- `AudioToolbox.framework`
+If `YotiSDKIdentityDocument` is specified as part of your dependencies, then add the following libraries at `Build Phases` → `Link Binary With Libraries`:
 - `AVFoundation.framework`
 - `CoreMedia.framework`
 - `CoreNFC.framework`
@@ -66,20 +66,16 @@ Add the following line to your `Package.swift` file:
 ```
 ...or add our package in Xcode via `File -> Swift Packages -> Add Package Dependency...` using the URL of this repository.
 
-If `YotiSDKDocument` is included in your target, then you should also make sure to build and add [`SwiftProtobuf`](https://github.com/apple/swift-protobuf) as an `XCFramework` bundle to your target. E.g. by following the steps outlined for [Carthage](#carthage), but with only the following line added to your [`Cartfile`](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile):
-```bash
-github "apple/swift-protobuf" "1.20.3"
-```
-
 ## Usage
 ### 1. Import frameworks
 Import the frameworks needed for your implementation:
 ```swift
 import YotiSDKCommon
 import YotiSDKCore
-import YotiSDKDocument      // Optional
-import YotiSDKFaceTec       // Optional
-import YotiSDKFaceCapture   // Optional
+import YotiSDKIdentityDocument          // Optional
+import YotiSDKSupplementaryDocument     // Optional
+import YotiSDKFaceTec                   // Optional
+import YotiSDKFaceCapture               // Optional
 ```
 
 ### 2. Launch the SDK
@@ -104,9 +100,10 @@ func sessionToken(for navigationController: YotiSDKNavigationController) -> Stri
 
 func supportedModuleTypes(for navigationController: YotiSDKNavigationController) -> [YotiSDKModule.Type] {
     [
-        YotiSDKDocumentModule.self,     // Optional
-        YotiSDKFaceTecModule.self,      // Optional
-        YotiSDKFaceCaptureModule.self   // Optional
+        YotiSDKIdentityDocumentModule.self,         // Optional
+        YotiSDKSupplementaryDocumentModule.self,    // Optional
+        YotiSDKFaceTecModule.self,                  // Optional
+        YotiSDKFaceCaptureModule.self               // Optional
     ]
 }
 ```
@@ -128,7 +125,7 @@ func navigationController(_ navigationController: YotiSDKNavigationController, d
 ### 5. Modify the properties and capabilities of your project's target
 Add [`NSCameraUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nscamerausagedescription) to your `Info.plist`.
 
-If `YotiSDKDocument` is included in your target, then you should also:
+If `YotiSDKIdentityDocument` is included in your target, then you should also:
 - Add [`NFCReaderUsageDescription`](https://developer.apple.com/documentation/bundleresources/information_property_list/nfcreaderusagedescription) to your `Info.plist`
 - Add [`com.apple.developer.nfc.readersession.iso7816.select-identifiers`](https://developer.apple.com/documentation/bundleresources/information_property_list/select-identifiers) to your `Info.plist` and include [`A0000002471001`](https://www.icao.int/publications/Documents/9303_p10_cons_en.pdf) as an application identifier for your app to support
 - Turn on [`Near Field Communication Tag Reading`](https://developer.apple.com/documentation/corenfc/building_an_nfc_tag-reader_app) under the Signing & Capabilities tab for your project’s target
@@ -169,13 +166,14 @@ Code | Description
 5005 | An unexpected document capture error occurred
 5006 | An unexpected liveness capture error occurred
 5008 | An unsupported configuration was used
-6000 | The document dependency could not be found
+6000 | The identity document dependency could not be found
 6001 | The face scan dependency could not be found
+6002 | The supplementary document dependency could not be found
 6003 | The face capture dependency could not be found
 7000 | The user did not have the required documents
 
 ## Support
-If you have any questions, please do not hesitate to contact clientsupport@yoti.com. Once we have answered your question, we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
+For any questions or support please contact us [here](https://support.yoti.com). Once we have answered your question, we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
 
 ## Licence
-See the licence for our SDK [here](https://www.yoti.com/terms/identity-verification).
+See the licence [here](https://www.yoti.com/terms/identity-verification).
