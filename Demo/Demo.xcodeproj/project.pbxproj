@@ -17,7 +17,8 @@
 		205B3F1E2417E7E80049E418 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F1D2417E7E80049E418 /* libc++.tbd */; };
 		205B3F202417E7F20049E418 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F1F2417E7F20049E418 /* libiconv.tbd */; };
 		205B3F222417E7FF0049E418 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F212417E7FF0049E418 /* libz.tbd */; };
-		20EF3DE72A7A934B0083CD1F /* YotiSDKFaceTec in Frameworks */ = {isa = PBXBuildFile; productRef = 20EF3DE62A7A934B0083CD1F /* YotiSDKFaceTec */; };
+		2068CC2C2A7BF54B0066A77A /* YotiSDKIdentityDocument in Frameworks */ = {isa = PBXBuildFile; productRef = 2068CC2B2A7BF54B0066A77A /* YotiSDKIdentityDocument */; };
+		2068CC2E2A7BF54F0066A77A /* YotiSDKFaceTec in Frameworks */ = {isa = PBXBuildFile; productRef = 2068CC2D2A7BF54F0066A77A /* YotiSDKFaceTec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,8 +56,9 @@
 				2043B51D2488240200FF8AD8 /* CoreNFC.framework in Frameworks */,
 				205B3F1E2417E7E80049E418 /* libc++.tbd in Frameworks */,
 				205B3F202417E7F20049E418 /* libiconv.tbd in Frameworks */,
-				20EF3DE72A7A934B0083CD1F /* YotiSDKFaceTec in Frameworks */,
 				205B3F222417E7FF0049E418 /* libz.tbd in Frameworks */,
+				2068CC2E2A7BF54F0066A77A /* YotiSDKFaceTec in Frameworks */,
+				2068CC2C2A7BF54B0066A77A /* YotiSDKIdentityDocument in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,7 +141,8 @@
 			);
 			name = Demo;
 			packageProductDependencies = (
-				20EF3DE62A7A934B0083CD1F /* YotiSDKFaceTec */,
+				2068CC2B2A7BF54B0066A77A /* YotiSDKIdentityDocument */,
+				2068CC2D2A7BF54F0066A77A /* YotiSDKFaceTec */,
 			);
 			productName = Sample;
 			productReference = 5F95E25D221B1333007B6035 /* Demo.app */;
@@ -462,7 +465,12 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		20EF3DE62A7A934B0083CD1F /* YotiSDKFaceTec */ = {
+		2068CC2B2A7BF54B0066A77A /* YotiSDKIdentityDocument */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 201BED0C299FA74B00EB820C /* XCRemoteSwiftPackageReference "yoti-doc-scan-ios" */;
+			productName = YotiSDKIdentityDocument;
+		};
+		2068CC2D2A7BF54F0066A77A /* YotiSDKFaceTec */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 201BED0C299FA74B00EB820C /* XCRemoteSwiftPackageReference "yoti-doc-scan-ios" */;
 			productName = YotiSDKFaceTec;
