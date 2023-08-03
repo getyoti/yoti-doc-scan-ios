@@ -50,7 +50,7 @@ binary "https://raw.githubusercontent.com/BlinkID/blinkid-ios/master/blinkid-ios
 #### 2. Embed frameworks
 Locate your fetched dependencies in `$(PROJECT_DIR)/Carthage/Build/**`, and add them to `General` → `Frameworks, Libraries and Embedded Content`. Ensure to `Embed & Sign` all of these dependencies, and to point your target's `FRAMEWORK_SEARCH_PATHS` to their directory.
 
-#### 3. Link with libraries and add resources (Optional)
+#### 3. Link binary with libraries (Optional)
 If `YotiSDKIdentityDocument` is specified as part of your dependencies, then add the following libraries at `Build Phases` → `Link Binary With Libraries`:
 - `AVFoundation.framework`
 - `CoreMedia.framework`
@@ -65,6 +65,8 @@ Add the following line to your `Package.swift` file:
 .package(url: "https://github.com/getyoti/yoti-doc-scan-ios.git", from: "1.0.0")
 ```
 ...or add our package in Xcode via `File -> Swift Packages -> Add Package Dependency...` using the URL of this repository.
+
+If you are including `YotiSDKIdentityDocument` in your target, then you should also link your binary to the required libraries as outlined [here](#3-link-binary-with-libraries-optional).
 
 ## Usage
 ### 1. Import frameworks
