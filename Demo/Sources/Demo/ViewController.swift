@@ -1,5 +1,4 @@
 import UIKit
-import YotiSDKCommon
 import YotiSDKCore
 import YotiSDKIdentityDocument
 import YotiSDKFaceTec

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 53;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,12 +11,6 @@
 		2033569B241668E500F628E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20335690241668E500F628E8 /* AppDelegate.swift */; };
 		2033569C241668E500F628E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20335692241668E500F628E8 /* LaunchScreen.storyboard */; };
 		2033569D241668E500F628E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20335694241668E500F628E8 /* Main.storyboard */; };
-		2043B51D2488240200FF8AD8 /* CoreNFC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2043B51C2488240200FF8AD8 /* CoreNFC.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		205B3F1A2417E7D90049E418 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F192417E7D90049E418 /* AVFoundation.framework */; };
-		205B3F1C2417E7DD0049E418 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F1B2417E7DD0049E418 /* CoreMedia.framework */; };
-		205B3F1E2417E7E80049E418 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F1D2417E7E80049E418 /* libc++.tbd */; };
-		205B3F202417E7F20049E418 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F1F2417E7F20049E418 /* libiconv.tbd */; };
-		205B3F222417E7FF0049E418 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 205B3F212417E7FF0049E418 /* libz.tbd */; };
 		2068CC2C2A7BF54B0066A77A /* YotiSDKIdentityDocument in Frameworks */ = {isa = PBXBuildFile; productRef = 2068CC2B2A7BF54B0066A77A /* YotiSDKIdentityDocument */; };
 		2068CC2E2A7BF54F0066A77A /* YotiSDKFaceTec in Frameworks */ = {isa = PBXBuildFile; productRef = 2068CC2D2A7BF54F0066A77A /* YotiSDKFaceTec */; };
 /* End PBXBuildFile section */
@@ -27,13 +21,7 @@
 		20335693241668E500F628E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		20335695241668E500F628E8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20335698241668E500F628E8 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2043B51C2488240200FF8AD8 /* CoreNFC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreNFC.framework; path = System/Library/Frameworks/CoreNFC.framework; sourceTree = SDKROOT; };
 		2043B527248829FF00FF8AD8 /* Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Demo.entitlements; sourceTree = "<group>"; };
-		205B3F192417E7D90049E418 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		205B3F1B2417E7DD0049E418 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		205B3F1D2417E7E80049E418 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		205B3F1F2417E7F20049E418 /* libiconv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libiconv.tbd; path = usr/lib/libiconv.tbd; sourceTree = SDKROOT; };
-		205B3F212417E7FF0049E418 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		20C98D0C299E3097004061FC /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		20C98D0D299E309E004061FC /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Main.strings; sourceTree = "<group>"; };
 		20C98D0E299E30A9004061FC /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Main.strings; sourceTree = "<group>"; };
@@ -51,12 +39,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				205B3F1A2417E7D90049E418 /* AVFoundation.framework in Frameworks */,
-				205B3F1C2417E7DD0049E418 /* CoreMedia.framework in Frameworks */,
-				2043B51D2488240200FF8AD8 /* CoreNFC.framework in Frameworks */,
-				205B3F1E2417E7E80049E418 /* libc++.tbd in Frameworks */,
-				205B3F202417E7F20049E418 /* libiconv.tbd in Frameworks */,
-				205B3F222417E7FF0049E418 /* libz.tbd in Frameworks */,
 				2068CC2E2A7BF54F0066A77A /* YotiSDKFaceTec in Frameworks */,
 				2068CC2C2A7BF54B0066A77A /* YotiSDKIdentityDocument in Frameworks */,
 			);
@@ -94,23 +76,9 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		205B3F162417E7CB0049E418 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				205B3F192417E7D90049E418 /* AVFoundation.framework */,
-				205B3F1B2417E7DD0049E418 /* CoreMedia.framework */,
-				2043B51C2488240200FF8AD8 /* CoreNFC.framework */,
-				205B3F1D2417E7E80049E418 /* libc++.tbd */,
-				205B3F1F2417E7F20049E418 /* libiconv.tbd */,
-				205B3F212417E7FF0049E418 /* libz.tbd */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		5F95E254221B1333007B6035 = {
 			isa = PBXGroup;
 			children = (
-				205B3F162417E7CB0049E418 /* Frameworks */,
 				5F95E25E221B1333007B6035 /* Products */,
 				2033568B241668E500F628E8 /* Sources */,
 			);
@@ -156,7 +124,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1010;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = "Yoti Ltd";
 				TargetAttributes = {
 					5F95E25C221B1333007B6035 = {
@@ -295,7 +263,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@loader_path/Frameworks",
 					"@executable_path/Frameworks",
@@ -325,7 +293,7 @@
 				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Demo/SupportingFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				OTHER_CFLAGS = "";
 				OTHER_SWIFT_FLAGS = "";
@@ -387,7 +355,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"@loader_path/Frameworks",
 					"@executable_path/Frameworks",
@@ -417,7 +385,7 @@
 				GCC_WARN_INHIBIT_ALL_WARNINGS = NO;
 				HEADER_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/Sources/Demo/SupportingFiles/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited)";
 				OTHER_CFLAGS = "";
 				OTHER_SWIFT_FLAGS = "";
