@@ -18,7 +18,7 @@ Add the following line to your `Package.swift` file:
 ```
 ...or add our package in Xcode via `File -> Swift Packages -> Add Package Dependency...` using the URL of this repository.
 
-If you include `YotiSDKIdentityDocument` in your target, then consider to also include `YotiDocumentScan` and `YotiNFC` for identity document OCR and NFC. If you include `YotiNFC`, make sure to weak-link your binary to `CoreNFC` as well.
+If you include `YotiSDKIdentityDocument` in your target, then consider to also include `YotiDocumentScan` and/or `YotiNFC` for identity document OCR and NFC. If you include `YotiNFC`, make sure to weak-link your binary to `CoreNFC` as well.
 
 ### CocoaPods
 Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html) and run `pod install` from its directory:
