@@ -14,7 +14,7 @@ iOS 14+
 ### Swift Package Manager
 Add the following line to your `Package.swift` file:
 ```swift
-.package(url: "https://github.com/getyoti/yoti-doc-scan-ios.git", from: "5.0.0")
+.package(url: "https://github.com/getyoti/yoti-doc-scan-ios.git", from: "6.0.0")
 ```
 ...or add our package in Xcode via `File -> Swift Packages -> Add Package Dependency...` using the URL of this repository.
 
