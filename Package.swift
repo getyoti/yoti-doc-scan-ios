@@ -63,58 +63,58 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "YotiNetwork",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.0.0/YotiNetwork.zip",
-            checksum: "9972458a1757b39ade5b7eb35a4f775debf5194a54e9b17cbefeec3709ae8675"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.1.0/YotiNetwork.zip",
+            checksum: "87c96c5b0ed1430d58dbca45dc0c7af4cad7fc81587f43ddb7af41f0c7d547f1"
         ),
         .binaryTarget(
             name: "YotiDocumentScan",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.0.0/YotiDocumentScan.zip",
-            checksum: "d715f7cf70df26a0f2fd72ab95b8894c2958604fde3b8bb0fec6798a88f42c4d"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.1.0/YotiDocumentScan.zip",
+            checksum: "47a2411c516724ecf59af6f951354a0ceaf55c0f2e26371a8f2747e5f3cf44ae"
         ),
         .binaryTarget(
             name: "YotiNFC",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.0.0/YotiNFC.zip",
-            checksum: "088b95677603f965a2e4177a9225af84b6248724d017153248dc8cf2548972f5"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.1.0/YotiNFC.zip",
+            checksum: "c16f467ed12478fdab6415bd3becce6a54c29d109c928c108c208c27a3dc8a01"
         ),
         .binaryTarget(
             name: "YotiSDKDesign",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.0.0/YotiSDKDesign.zip",
-            checksum: "c9c8038b906f07ba237326a2862d5ff86a4e45554a5fedf8606379ef31ae392e"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.1.0/YotiSDKDesign.zip",
+            checksum: "d6f621a626a379ca7c7ce627e19898ddf844d1f3ed7e3cb37de0ead2ef7ac40c"
         ),
         .binaryTarget(
             name: "YotiSDKCore",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.0.0/YotiSDKCore.zip",
-            checksum: "1ca3dad66e521791e381d295ba7ac8165af05cb4ff7a24b37696d94f7978f361"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.1.0/YotiSDKCore.zip",
+            checksum: "d0db63881d9092d2a5ce5776fbf8915eec476b2cdb5188f012f1f90c97507064"
         ),
         .binaryTarget(
             name: "YotiSDKDocument",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.0.0/YotiSDKDocument.zip",
-            checksum: "8b8273ce836e614f5a04b047f7c9c8d3a7be8a94043a70577ec4b21170f7ea10"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.1.0/YotiSDKDocument.zip",
+            checksum: "62a2614b898429af28e8cf6fcc546858c94dcfcaf1c903960d9f8b3e0583f805"
         ),
         .binaryTarget(
             name: "YotiSDKIdentityDocument",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.0.0/YotiSDKIdentityDocument.zip",
-            checksum: "d8d66acc522516d920ef0dc5e1793fa0b8d5ef6d8982f376d137a05321bce640"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.1.0/YotiSDKIdentityDocument.zip",
+            checksum: "c03a98d248eb55b993663d8d9ba6b1982ee92d51c132893a9571b204c65332cf"
         ),
         .binaryTarget(
             name: "YotiSDKSupplementaryDocument",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.0.0/YotiSDKSupplementaryDocument.zip",
-            checksum: "6f071919307bb516623a3e0783419bb4cf74d3cfa64241c3c6e85b1bbd891019"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.1.0/YotiSDKSupplementaryDocument.zip",
+            checksum: "da8135c753ebbf9b1e6b82da4a633733f15ad1ff49a570f3cb15932230643423"
         ),
         .binaryTarget(
             name: "YotiSDKFace",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.0.0/YotiSDKFace.zip",
-            checksum: "352a3927ed1dc5274fed890de6ce8b25f4354dad5f1c8ee43770ffb2d74868a1"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.1.0/YotiSDKFace.zip",
+            checksum: "833b3e480c279326fc6f83fe9223bf26f66ab974169e9974c259e4abecd34816"
         ),
         .binaryTarget(
             name: "YotiSDKFaceTec",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.0.0/YotiSDKFaceTec-SPM.zip",
-            checksum: "e126605409814f6c4c8dad74004f0bccdfa23580298f020efff0c11d8f81ecd6"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.1.0/YotiSDKFaceTec-SPM.zip",
+            checksum: "433fa6ca63d89a0c0a6893f9cabd19b7da68b4aa703103210acd81446c4c927a"
         ),
         .binaryTarget(
             name: "YotiSDKFaceCapture",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.0.0/YotiSDKFaceCapture.zip",
-            checksum: "9f30ad386bcf56d047613296f0462954676d6a4944d8836afbc722a68dd56992"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.1.0/YotiSDKFaceCapture.zip",
+            checksum: "08dba4e2aa0f96c3c30bf7e6909a6933708ec867e1de7e643c0ad29fb29a40ab"
         ),
         .binaryTarget(
             name: "Microblink",
@@ -123,8 +123,8 @@ let package = Package(
         ),
         .binaryTarget(
             name: "FaceTecSDK",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.0.0/FaceTecSDK.zip",
-            checksum: "a5161f3b04ab67dad3b4bc441802762d19c81c77f3c5a49a6f266c17b9982b59"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v6.1.0/FaceTecSDK.zip",
+            checksum: "da7d385ab5bd8074f6d5839deac320740ca72dab816c6d18e77ef3cfc5e12096"
         )
     ]
 )
