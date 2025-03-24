@@ -51,7 +51,7 @@ binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFace.json"                     // Include if `YotiSDKFaceTec` or `YotiSDKFaceCapture` is included
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFaceTec.json"                  // Optional
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFaceCapture.json"              // Optional
-binary "https://raw.githubusercontent.com/BlinkID/blinkid-ios/master/blinkid-ios.json" == 5.18.0                                // Include if `YotiDocumentScan` is included
+binary "https://raw.githubusercontent.com/BlinkID/blinkid-ios/refs/tags/v5.18.0/blinkid-ios.json" == 5.18.0                     // Include if `YotiDocumentScan` is included
 ```
 
 #### 2. Embed dependencies and link your binary to them
