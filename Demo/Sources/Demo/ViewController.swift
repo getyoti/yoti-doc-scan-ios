@@ -16,28 +16,20 @@ final class ViewController: UIViewController {
 
 // MARK: - YotiSDKDataSource
 extension ViewController: YotiSDKDataSource {
-    func sessionID(for navigationController: YotiSDKNavigationController) -> String {
-        ""
-    }
-
-    func sessionToken(for navigationController: YotiSDKNavigationController) -> String {
-        ""
-    }
-
-    func supportedModuleTypes(for navigationController: YotiSDKNavigationController) -> [YotiSDKModule.Type] {
-        [YotiSDKIdentityDocumentModule.self, YotiSDKFaceTecModule.self]
+    func configuration() -> YotiSDKConfiguration {
+        .init(
+            sessionID: "",
+            sessionToken: "",
+            singleFlow: false,
+            moduleTypes: [YotiSDKIdentityDocumentModule.self, YotiSDKFaceTecModule.self]
+        )
     }
 }
 
 // MARK: - YotiSDKDelegate
 extension ViewController: YotiSDKDelegate {
-    func navigationController(_ navigationController: YotiSDKNavigationController, didFinishWithResult result: YotiSDKResult) {
+    func didFinish(statusCode: Int) {
         dismiss(animated: true)
-        switch result {
-        case .success:
-            break
-        case .failure(let error):
-            print(error)
-        }
+        print(statusCode)
     }
 }

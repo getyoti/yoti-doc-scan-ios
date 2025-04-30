@@ -14,7 +14,7 @@ iOS 14+
 ### Swift Package Manager
 Add the following line to your `Package.swift` file:
 ```swift
-.package(url: "https://github.com/getyoti/yoti-doc-scan-ios.git", from: "6.0.0")
+.package(url: "https://github.com/getyoti/yoti-doc-scan-ios.git", from: "7.0.0")
 ```
 ...or add our package in Xcode via `File -> Swift Packages -> Add Package Dependency...` using the URL of this repository.
 
@@ -51,7 +51,6 @@ binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFace.json"                     // Include if `YotiSDKFaceTec` or `YotiSDKFaceCapture` is included
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFaceTec.json"                  // Optional
 binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs/Carthage/YotiSDKFaceCapture.json"              // Optional
-binary "https://raw.githubusercontent.com/BlinkID/blinkid-ios/refs/tags/v5.18.0/blinkid-ios.json" == 5.18.0                     // Include if `YotiDocumentScan` is included
 ```
 
 #### 2. Embed dependencies and link your binary to them
@@ -71,7 +70,7 @@ import YotiSDKFaceCapture               // Optional
 ```
 
 ### 2. Launch the SDK
-Initialize and present the `YotiSDKNavigationController`:
+Initialize and present `YotiSDKNavigationController`:
 ```swift
 let navigationController = YotiSDKNavigationController()
 navigationController.sdkDataSource = self
@@ -79,38 +78,45 @@ navigationController.sdkDelegate = self
 present(navigationController, animated: true, completion: nil)
 ```
 
-### 3. Specify the session and its supported module types
+### 3. Specify a configuration
 Conform to `YotiSDKDataSource`:
 ```swift
-func sessionID(for navigationController: YotiSDKNavigationController) -> String {
-    ""
-}
-
-func sessionToken(for navigationController: YotiSDKNavigationController) -> String {
-    ""
-}
-
-func supportedModuleTypes(for navigationController: YotiSDKNavigationController) -> [YotiSDKModule.Type] {
-    [
-        YotiSDKIdentityDocumentModule.self,         // Optional
-        YotiSDKSupplementaryDocumentModule.self,    // Optional
-        YotiSDKFaceTecModule.self,                  // Optional
-        YotiSDKFaceCaptureModule.self               // Optional
-    ]
+func configuration() -> YotiSDKConfiguration {
+    .init(
+        sessionID: "",
+        sessionToken: "",
+        // If `singleFlow` is true, `moduleTypes` must contain exactly one module type.
+        // If `singleFlow` is false, `moduleTypes` must contain at least one module type.
+        singleFlow: false,
+        moduleTypes: [
+            YotiSDKIdentityDocumentModule.self,         // Optional
+            YotiSDKSupplementaryDocumentModule.self,    // Optional
+            YotiSDKFaceTecModule.self,                  // Optional
+            YotiSDKFaceCaptureModule.self               // Optional
+        ],
+        // If `theme` is nil, our default theme is used.
+        // `YotiSDKThemeBuilder` can be used to build a custom theme, in which we support:
+        // - Light and dark mode color themes. We also support specifying only a primary color for each mode
+        // - Typography theme (system and custom fonts, font weight, size, line height multiple and kern)
+        // - Spacing mode (compact, regular and relaxed)
+        // - Shape theme (corner radius and border width)
+        // - Icon theme (custom vectors, system and custom SF Symbols, incl. localized ones)
+        // - Illustration theme (custom vectors)
+        theme: YotiSDKThemeBuilder {
+            // All customisation types are optional, and each one can be set independently from the others.
+            $0.spacingMode = .compact
+            ...
+        }.build()
+    )
 }
 ```
 
 ### 4. Handle the result
 Conform to `YotiSDKDelegate`:
 ```swift
-func navigationController(_ navigationController: YotiSDKNavigationController, didFinishWithResult result: YotiSDKResult) {
+func didFinish(statusCode: Int) {
     dismiss(animated: true)
-    switch result {
-    case .success:
-        break
-    case .failure(let error):
-        print(error)
-    }
+    print(statusCode)
 }
 ```
 
@@ -137,10 +143,11 @@ Russian | ru
 Spanish | es
 Turkish | tr
 
-## Error codes
+## Status codes
 Code | Description
 :-- | :--
-1000 | No error occurred. The user cancelled the session
+0 | The user completed the session
+1000 | The user cancelled the session
 2000 | Unauthorised request (wrong or expired session token)
 2001 | Session not found
 2002 | Session expired
