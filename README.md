@@ -14,7 +14,7 @@ iOS 14+
 ### Swift Package Manager
 Add the following line to your `Package.swift` file:
 ```swift
-.package(url: "https://github.com/getyoti/yoti-doc-scan-ios.git", from: "7.0.0")
+.package(url: "https://github.com/getyoti/yoti-doc-scan-ios.git", from: "8.0.0")
 ```
 ...or add our package in Xcode via `File -> Swift Packages -> Add Package Dependency...` using the URL of this repository.
 
@@ -89,11 +89,14 @@ func configuration() -> YotiSDKConfiguration {
         // If `singleFlow` is false, `moduleTypes` must contain at least one module type.
         singleFlow: false,
         moduleTypes: [
-            YotiSDKIdentityDocumentModule.self,         // Optional
-            YotiSDKSupplementaryDocumentModule.self,    // Optional
-            YotiSDKFaceTecModule.self,                  // Optional
-            YotiSDKFaceCaptureModule.self               // Optional
+            YotiSDKIdentityDocumentModule.self,             // Optional
+            YotiSDKSupplementaryDocumentModule.self,        // Optional
+            YotiSDKFaceTecModule.self,                      // Optional
+            YotiSDKFaceCaptureModule.self                   // Optional
         ],
+        options: [
+            .disableIdentityDocumentCaptureEdgeDetection    // Optional
+        ]
         // If `theme` is nil, our default theme is used.
         // `YotiSDKThemeBuilder` can be used to build a custom theme, in which we support:
         // - Light and dark mode color themes. We also support specifying only a primary color for each mode
