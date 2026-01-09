@@ -95,7 +95,8 @@ func configuration() -> YotiSDKConfiguration {
             YotiSDKFaceCaptureModule.self                   // Optional
         ],
         options: [
-            .disableIdentityDocumentCaptureEdgeDetection    // Optional
+            .disableIdentityDocumentCaptureEdgeDetection,   // Optional
+            .enableRelaxedFaceCaptureLightingRequirement    // Optional
         ]
         // If `theme` is nil, our default theme is used.
         // `YotiSDKThemeBuilder` can be used to build a custom theme, in which we support:
