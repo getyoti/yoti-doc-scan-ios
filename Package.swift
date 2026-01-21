@@ -63,68 +63,68 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "YotiNetwork",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.0/YotiNetwork.zip",
-            checksum: "7278c42aac3036057e5f6442749c7c1beb2c88d1caa2360f0102682e135232a8"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.1/YotiNetwork.zip",
+            checksum: "fd18d11afc1c4235d6c781c4c449e6db88c719fb3372fde8d127040df4a2cad8"
         ),
         .binaryTarget(
             name: "YotiDocumentScan",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.0/YotiDocumentScan-SPM.zip",
-            checksum: "e2749747adc1239ee719fff5e673881ada125d60b9ec51cf285df95afb655194"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.1/YotiDocumentScan-SPM.zip",
+            checksum: "eab773e2911feb3fcc52293ff6763d32f48963fa1d8d6bcfa2abdd54d2cc3819"
         ),
         .binaryTarget(
             name: "YotiNFC",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.0/YotiNFC.zip",
-            checksum: "5d7a45b2c8ea9d2c6d47274faecc1737f56d054d3a4b35e7da40d59adba9f4c2"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.1/YotiNFC.zip",
+            checksum: "d83bbb2b37d36ddd9a8b3cf91695ad52d2a1a963191836d17913d432c5707347"
         ),
         .binaryTarget(
             name: "YotiSDKDesign",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.0/YotiSDKDesign.zip",
-            checksum: "d54bee028e496712d6c279353331d899090d1f5b260b13ee17df6a8652d20cf9"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.1/YotiSDKDesign.zip",
+            checksum: "77d283862367ba8e4c7f9190cf10b3448ff93c0a82dd2f9209d12b8e1077a118"
         ),
         .binaryTarget(
             name: "YotiSDKCore",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.0/YotiSDKCore.zip",
-            checksum: "84b2972e171aeda52b577d0565c779cf08a53ee50faef45918bc96fa3883a30b"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.1/YotiSDKCore.zip",
+            checksum: "7aeee8619c2ffdd3ec2083349abcef3a61ac89b988e53b9a9d9f0538195c9cb9"
         ),
         .binaryTarget(
             name: "YotiSDKDocument",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.0/YotiSDKDocument.zip",
-            checksum: "613dd2ed748f3d4e65982139745b1f67fab46539c43c6856be019c74f10e71b6"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.1/YotiSDKDocument.zip",
+            checksum: "fb1bbffe34776b891e8f99f942ab7a9a6ed6247f2144b71f4641079bf4d59f36"
         ),
         .binaryTarget(
             name: "YotiSDKIdentityDocument",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.0/YotiSDKIdentityDocument.zip",
-            checksum: "6a6458a8eaa278de9f3736e619ab3da86af58c1716a7d63d6b1b2c4ed88fcf49"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.1/YotiSDKIdentityDocument.zip",
+            checksum: "3867f3ed8513810cae78705689fb4bc3bd1647ee8bc0037f6ab77d702aeac269"
         ),
         .binaryTarget(
             name: "YotiSDKSupplementaryDocument",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.0/YotiSDKSupplementaryDocument.zip",
-            checksum: "593c6c043925d3ac02e95f169eaa622788f83ada4ba87567db6c6e5a4943c202"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.1/YotiSDKSupplementaryDocument.zip",
+            checksum: "f604d9eaa34d98aa349bf62e7c10840458be7ee4239d8dd45776d22bc8740185"
         ),
         .binaryTarget(
             name: "YotiSDKFace",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.0/YotiSDKFace.zip",
-            checksum: "8e61f94009c3b035bc52f2b089b34002cbcf8ed277ca47171253e7288db54a5a"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.1/YotiSDKFace.zip",
+            checksum: "ed300f48e33b14979f69135df30537bc30dbcbaae24f2e0c579eb7c8b3908c86"
         ),
         .binaryTarget(
             name: "YotiSDKFaceTec",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.0/YotiSDKFaceTec-SPM.zip",
-            checksum: "3c6ca75ab77ed4386402156d8a62ddf7860ca4086dea38bc6ef62f38a3ca77e1"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.1/YotiSDKFaceTec-SPM.zip",
+            checksum: "683774335f99eba1ea5d578a6f4a3aae25b15d82190623708fca3871b3b25a4c"
         ),
         .binaryTarget(
             name: "YotiSDKFaceCapture",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.0/YotiSDKFaceCapture.zip",
-            checksum: "9a8a90f6ecfd57f612a44872d26441c6544b929a6d9acd1d806ff5e77edb06d0"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.1/YotiSDKFaceCapture.zip",
+            checksum: "59a9ae60d9648ba8b9d4b9fcafc74e4dd3afe5ac552e93b22db3e38bbac09d93"
         ),
         .binaryTarget(
             name: "Microblink",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.0/Microblink.zip",
-            checksum: "cc14d283a6dbacbda7cbc274c7ae1712402705a74c471e435dae0c123313ddd5"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.1/Microblink.zip",
+            checksum: "67ce8f3206c456742dd4ebbee291be486d493bfc0ca38378720423ec99d87581"
         ),
         .binaryTarget(
             name: "FaceTecSDK",
-            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.0/FaceTecSDK.zip",
-            checksum: "3a09dd568736519970af90abc8c9d618bada494c114a714e17c1d132fafc9069"
+            url: "https://github.com/getyoti/yoti-doc-scan-ios/releases/download/v8.1.1/FaceTecSDK.zip",
+            checksum: "58561e6a9e01a94b5ddc3a4730bcbcd61ad23f4558844bee0d154f00a6bb3b09"
         )
     ]
 )
