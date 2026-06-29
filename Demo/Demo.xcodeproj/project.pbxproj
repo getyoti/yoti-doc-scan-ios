@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		058411E52FF268D100E338EA /* YotiSDKFaceCapture in Frameworks */ = {isa = PBXBuildFile; productRef = 058411E42FF268D100E338EA /* YotiSDKFaceCapture */; };
 		20335699241668E500F628E8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2033568D241668E500F628E8 /* ViewController.swift */; };
 		2033569B241668E500F628E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20335690241668E500F628E8 /* AppDelegate.swift */; };
 		2033569C241668E500F628E8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20335692241668E500F628E8 /* LaunchScreen.storyboard */; };
 		2033569D241668E500F628E8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20335694241668E500F628E8 /* Main.storyboard */; };
 		2068CC2C2A7BF54B0066A77A /* YotiSDKIdentityDocument in Frameworks */ = {isa = PBXBuildFile; productRef = 2068CC2B2A7BF54B0066A77A /* YotiSDKIdentityDocument */; };
-		2068CC2E2A7BF54F0066A77A /* YotiSDKFaceTec in Frameworks */ = {isa = PBXBuildFile; productRef = 2068CC2D2A7BF54F0066A77A /* YotiSDKFaceTec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2068CC2E2A7BF54F0066A77A /* YotiSDKFaceTec in Frameworks */,
+				058411E52FF268D100E338EA /* YotiSDKFaceCapture in Frameworks */,
 				2068CC2C2A7BF54B0066A77A /* YotiSDKIdentityDocument in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,7 +110,7 @@
 			name = Demo;
 			packageProductDependencies = (
 				2068CC2B2A7BF54B0066A77A /* YotiSDKIdentityDocument */,
-				2068CC2D2A7BF54F0066A77A /* YotiSDKFaceTec */,
+				058411E42FF268D100E338EA /* YotiSDKFaceCapture */,
 			);
 			productName = Sample;
 			productReference = 5F95E25D221B1333007B6035 /* Demo.app */;
@@ -433,15 +433,15 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		058411E42FF268D100E338EA /* YotiSDKFaceCapture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 201BED0C299FA74B00EB820C /* XCRemoteSwiftPackageReference "yoti-doc-scan-ios" */;
+			productName = YotiSDKFaceCapture;
+		};
 		2068CC2B2A7BF54B0066A77A /* YotiSDKIdentityDocument */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 201BED0C299FA74B00EB820C /* XCRemoteSwiftPackageReference "yoti-doc-scan-ios" */;
 			productName = YotiSDKIdentityDocument;
-		};
-		2068CC2D2A7BF54F0066A77A /* YotiSDKFaceTec */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 201BED0C299FA74B00EB820C /* XCRemoteSwiftPackageReference "yoti-doc-scan-ios" */;
-			productName = YotiSDKFaceTec;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

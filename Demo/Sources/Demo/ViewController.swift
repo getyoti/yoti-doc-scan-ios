@@ -1,7 +1,7 @@
 import UIKit
 import YotiSDKCore
 import YotiSDKIdentityDocument
-import YotiSDKFaceTec
+import YotiSDKFaceCapture
 
 final class ViewController: UIViewController {
     @IBOutlet private weak var button: UIButton!
@@ -21,7 +21,7 @@ extension ViewController: YotiSDKDataSource {
             sessionID: "",
             sessionToken: "",
             singleFlow: false,
-            moduleTypes: [YotiSDKIdentityDocumentModule.self, YotiSDKFaceTecModule.self]
+            moduleTypes: [YotiSDKIdentityDocumentModule.self, YotiSDKFaceCaptureModule.self]
         )
     }
 }

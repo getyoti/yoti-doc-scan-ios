@@ -2,7 +2,7 @@
 
 ![Illustration](./Illustration.png)
 
-Our SDK allows a user of your app to scan or take a photo of their document and/or face, we then verify this instantly and prepare a response that your system can retrieve on your hosted site.
+Our SDK allows a user of your app to scan or take a photo of their document and/or face; we then verify this instantly and prepare a response that your system can retrieve on your hosted site.
 
 ## Prerequisites
 To integrate with our SDK, a working infrastructure is needed － see [developers.yoti.com](https://developers.yoti.com/identity-verification/overview) for more details.
@@ -14,11 +14,11 @@ iOS 14+
 ### Swift Package Manager
 Add the following line to your `Package.swift` file:
 ```swift
-.package(url: "https://github.com/getyoti/yoti-doc-scan-ios.git", from: "8.0.0")
+.package(url: "https://github.com/getyoti/yoti-doc-scan-ios.git", from: "9.0.0")
 ```
 ...or add our package in Xcode via `File -> Swift Packages -> Add Package Dependency...` using the URL of this repository.
 
-If you include `YotiSDKIdentityDocument` in your target, then consider to also include `YotiDocumentScan` and/or `YotiNFC` for identity document OCR and NFC. If you include `YotiNFC`, make sure to weak-link your binary to `CoreNFC` as well.
+If you include `YotiSDKIdentityDocument` in your target, then consider also including `YotiDocumentScan` and/or `YotiNFC` for identity document OCR and NFC. If you include `YotiNFC`, make sure to weak-link your binary to `CoreNFC` as well.
 
 ### CocoaPods
 Add the following to your [`Podfile`](https://guides.cocoapods.org/using/the-podfile.html) and run `pod install` from its directory:
@@ -57,6 +57,11 @@ binary "https://raw.githubusercontent.com/getyoti/yoti-doc-scan-ios/master/Specs
 Locate your fetched dependencies in `$(PROJECT_DIR)/Carthage/Build/**`, and add them to `General` → `Frameworks, Libraries and Embedded Content`. Make sure to `Embed & Sign` these dependencies and to point your target's `FRAMEWORK_SEARCH_PATHS` to their directory.
 
 You should also ensure that your binary and dependencies are linked in `Build Phases` → `Link Binary With Libraries`. If you've embedded `YotiNFC` in your target, then make sure to weak-link your binary to `CoreNFC` as well.
+
+### Additional setup
+If your target includes `YotiSDKFaceTec`, then you will need to manually provide `FaceTecSDK.xcframework` for release builds and `FaceTecSDKForDevelopment.xcframework` for debug builds. Both can be found under the latest release in the [Releases](https://github.com/getyoti/yoti-doc-scan-ios/releases) section of this repository.
+
+One approach to providing the correct framework relative to the build configuration is to add `FaceTecSDK.xcframework` to your target, then define a build variable (e.g. `FACETECSDK_XCFRAMEWORK_PATH`) in your target's build settings per configuration and reference it in the `.pbxproj` file (e.g. `path = "$(FACETECSDK_XCFRAMEWORK_PATH)"`).
 
 ## Usage
 ### 1. Import frameworks
@@ -177,7 +182,7 @@ Code | Description
 7000 | The user did not have the required documents
 
 ## Support
-For any questions or support please contact us [here](https://support.yoti.com). Once we have answered your question, we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
+For any questions or support, please contact us [here](https://support.yoti.com). Once we have answered your question, we may contact you again to discuss Yoti products and services. If you'd prefer us not to do this, please let us know when you e-mail.
 
 ## Licence
 See the licence [here](https://www.yoti.com/terms/identity-verification).
