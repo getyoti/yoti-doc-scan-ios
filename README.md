@@ -120,6 +120,8 @@ func configuration() -> YotiSDKConfiguration {
 }
 ```
 
+For more on building a custom theme, see the [theming](./THEMING.md) guide.
+
 ### 4. Handle the result
 Conform to `YotiSDKDelegate`:
 ```swift
